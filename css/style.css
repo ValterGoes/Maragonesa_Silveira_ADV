@@ -1198,7 +1198,7 @@ body.show-whatsapp .facebook-wrapper {
 @media screen and (max-width: 690px) {
   /* Header */
   .header {
-    height: 6rem;
+    height: 6.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1241,7 +1241,7 @@ body.show-whatsapp .facebook-wrapper {
 
   /* Home */
   .home_back {
-    margin-top: 6rem;
+    /* margin-top: 6rem; */
     background-position: relative;
   }
   
@@ -1574,7 +1574,7 @@ body.show-whatsapp .facebook-wrapper {
   
   /* header */
   .header {
-    height: 6rem;
+    height: 6.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1618,10 +1618,6 @@ body.show-whatsapp .facebook-wrapper {
 
   /* home */
 
-  .home_back {
-    margin-top: 6rem;
-  }
-  
   .home_back::before {
     background-image: url("../images/bg4.png");
     background-position: right;
