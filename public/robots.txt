@@ -1,0 +1,7 @@
+# Permite que todos os rastreadores acessem todas as áreas do site.
+
+User-agent: *
+Allow: /
+
+# URL onde o sitemap.xml pode ser encontrado.
+Sitemap: https://maragonesa.adv.br/sitemap.xml

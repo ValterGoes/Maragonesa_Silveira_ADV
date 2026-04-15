@@ -13,71 +13,111 @@
     <link rel="canonical" href="https://maragonesa.adv.br/" />
     <meta name="robots" content="index, follow" />
 
+    <!-- Preconnects -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Open Graph -->
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Maragonesa Silveira | Advocacia Previdenciária e INSS" />
     <meta property="og:description" content="Especialistas em Direito Previdenciário: Aposentadorias, benefícios, auxílios e revisões do INSS. Atendimento online em todo o Brasil e presencial em Porto Alegre - RS." />
     <meta property="og:url" content="https://maragonesa.adv.br/" />
     <meta property="og:site_name" content="Maragonesa Silveira Advocacia" />
-    <meta property="og:image" content="images/capa.svg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="https://maragonesa.adv.br/images/logo-azul-512x512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Maragonesa Silveira | Advocacia Previdenciária e INSS" />
     <meta name="twitter:description" content="Especialistas em Direito Previdenciário: Aposentadorias, benefícios, auxílios e revisões do INSS. Atendimento online em todo o Brasil e presencial em Porto Alegre - RS." />
 
+    <!-- Facebook Domain Verification -->
     <meta name="facebook-domain-verification" content="75zed8ovg3n1n231iov00ie7kq2wn7" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" media="print" onload="this.media='all'" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" media="print" onload="this.media='all'" />
 
-    <link rel="icon" type="image/png" href="https://maragonesa.adv.br/images/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="https://maragonesa.adv.br/images/favicon.svg" />
-    <link rel="shortcut icon" href="https://maragonesa.adv.br/images/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://maragonesa.adv.br/images/apple-touch-icon.png" />
-    <link rel="manifest" href="https://maragonesa.adv.br/images/site.webmanifest" />
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="manifest" href="/images/site.webmanifest" />
 
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TQTBBC83');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Ads (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17439900046"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17439900046', { 'animate_ad_signals': false });
+    </script>
+
+    <!-- Google Ads Conversion -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17439900046/p7nQCJHKlf0bEI6D__tA',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "LegalService",
-        "name": "Maragonesa Silveira | Advocacia Previdenciária",
-        "url": "https://maragonesa.adv.br/",
-        "image": "https://maragonesa.adv.br/images/logo-azul-512x512.png",
-        "logo": "https://maragonesa.adv.br/images/logo-azul-512x512.png",
-        "telephone": "+55 51 99683-9890",
-        "email": "maragonesa.adv@gmail.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Av. Praia de Belas, nº 1212 sala 424",
-          "addressLocality": "Porto Alegre",
-          "addressRegion": "RS",
-          "postalCode": "90110-000",
-          "addressCountry": "BR"
-        },
-        "serviceType": "Direito Previdenciário e Benefícios do INSS",
-        "hasMap": "https://maps.google.com/?cid=16087064335138607864",
-        "sameAs": ["https://www.instagram.com/maragonesa"]
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Maragonesa Silveira | Advocacia Previdenciária",
+      "url": "https://maragonesa.adv.br/",
+      "logo": "https://maragonesa.adv.br/images/logo-azul-512x512.png",
+      "image": "https://maragonesa.adv.br/images/logo-azul-512x512.png",
+      "telephone": "+55 51 99683-9890",
+      "email": "maragonesa.adv@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Praia de Belas, nº 1212 sala 424",
+        "addressLocality": "Porto Alegre",
+        "addressRegion": "RS",
+        "postalCode": "90110-000",
+        "addressCountry": "BR"
       },
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Maragonesa Silveira - Advocacia & Consultoria",
-            "item": "https://maragonesa.adv.br/"
-          }
-        ]
-      }
-    ]
+      "serviceType": "Direito Previdenciário e Benefícios do INSS",
+      "hasMap": "https://maps.google.com/?cid=16087064335138607864",
+      "sameAs": [
+        "https://www.instagram.com/maragonesa",
+        "https://www.linkedin.com/in/maragonesa-silveira",
+        "https://web.facebook.com/MaragonesaSilveira",
+        "https://www.youtube.com/@maragonesaSilveira",
+        "https://www.tiktok.com/@maragonesasilveira"
+      ]
+    }
     </script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQTBBC83"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
