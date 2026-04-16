@@ -22,7 +22,7 @@ export default function AboutSection() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative overflow-hidden bg-cream py-20 sm:py-28 lg:py-44"
+      className="relative overflow-hidden bg-cream py-20 sm:py-28 lg:py-40"
     >
       {/* Large background text */}
       <motion.div
