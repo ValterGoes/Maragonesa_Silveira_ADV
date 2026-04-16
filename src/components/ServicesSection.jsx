@@ -1,19 +1,20 @@
 import { useRef } from 'react'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import logoCompleta from '../assets/images/logo_completo_branco.png'
 
-const services = [
-  { icon: 'request_quote', title: 'Aposentadorias', description: 'Aposentadoria por tempo de contribuição, por idade, com tempo rural e especial. Concessão do benefício e revisão do valor.' },
-  { icon: 'personal_injury', title: 'Auxílio-Doença', description: 'Impossibilitado de trabalhar em razão da doença, pode ter direito ao auxílio por incapacidade temporária ou permanente.' },
-  { icon: 'accessible_forward', title: 'Auxílio-Acidente', description: 'Benefício pago ao segurado que sofreu um acidente e ficou com sequelas que reduzem sua capacidade de trabalho.' },
-  { icon: 'paid', title: 'Isenção do IR', description: 'Isenção de imposto de renda por doenças graves, como neoplasia maligna, cardiopatia grave, alienação mental e outros.' },
-  { icon: 'elderly_woman', title: 'LOAS (BPC)', description: 'Benefício assistencial para deficiente ou idoso em situação de baixa renda.' },
-  { icon: 'home_work', title: 'Quitação de Imóvel', description: 'Análise do contrato para possibilidade de quitação do imóvel diante da invalidez ou morte do contratante.' },
-  { icon: 'group', title: 'Pensão por Morte', description: 'Benefício pago aos dependentes do segurado falecido. Revisão de valores e cotas.' },
-  { icon: 'add_circle', title: 'Adicional de 25%', description: 'Valor adicional para aposentados por invalidez que necessitam de cuidados de outra pessoa.' },
+const serviceIcons = [
+  'request_quote',
+  'personal_injury',
+  'accessible_forward',
+  'paid',
+  'elderly_woman',
+  'home_work',
+  'group',
+  'add_circle',
 ]
 
-function BentoCard({ service, index, large, inView }) {
+function BentoCard({ service, icon, index, large, inView, featuredLabel }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -36,7 +37,7 @@ function BentoCard({ service, index, large, inView }) {
       <div className="relative">
         <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.06] bg-white/[0.03] transition-all duration-300 group-hover:border-gold/20 group-hover:bg-gold/10">
           <i className="material-icons-outlined text-white/40 transition-colors duration-300 group-hover:text-gold text-xl">
-            {service.icon}
+            {icon}
           </i>
         </div>
         <h3 className="text-lg font-semibold text-white/90">{service.title}</h3>
@@ -52,7 +53,7 @@ function BentoCard({ service, index, large, inView }) {
       {large && (
         <div className="relative mt-8 flex items-center gap-2 text-[12px] font-medium text-gold/60 transition-colors group-hover:text-gold">
           <span className="h-px w-4 bg-current" />
-          Serviço principal
+          {featuredLabel}
         </div>
       )}
     </motion.div>
@@ -60,6 +61,7 @@ function BentoCard({ service, index, large, inView }) {
 }
 
 export default function ServicesSection() {
+  const { t } = useTranslation()
   const sectionRef = useRef(null)
   const inView = useInView(sectionRef, { once: true, margin: '-80px' })
 
@@ -68,6 +70,8 @@ export default function ServicesSection() {
     offset: ['start end', 'end start'],
   })
   const bgY = useTransform(scrollYProgress, [0, 1], [40, -40])
+
+  const services = t('services.items', { returnObjects: true })
 
   return (
     <section
@@ -97,7 +101,7 @@ export default function ServicesSection() {
             >
               <div className="h-px w-12 bg-gold" />
               <span className="text-[11px] font-semibold tracking-[0.3em] text-gold">
-                NOSSOS SERVIÇOS
+                {t('services.eyebrow')}
               </span>
             </motion.div>
             <motion.h2
@@ -106,9 +110,9 @@ export default function ServicesSection() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="font-sans text-3xl font-medium leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-6xl"
             >
-              Expertise onde
+              {t('services.title1')}
               <br />
-              <span className="text-white/30">você mais precisa</span>
+              <span className="text-white/30">{t('services.title2')}</span>
               <span className="text-gold">.</span>
             </motion.h2>
           </div>
@@ -117,16 +121,35 @@ export default function ServicesSection() {
         {/* Asymmetric Bento Grid */}
         <div className="relative z-10 grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[minmax(160px,auto)] xl:auto-rows-[minmax(180px,auto)]">
           {/* Large featured card */}
-          <BentoCard service={services[0]} index={0} large inView={inView} />
+          <BentoCard
+            service={services[0]}
+            icon={serviceIcons[0]}
+            index={0}
+            large
+            inView={inView}
+            featuredLabel={t('services.featured')}
+          />
 
           {/* Regular cards */}
           {services.slice(1, 3).map((service, i) => (
-            <BentoCard key={service.title} service={service} index={i + 1} inView={inView} />
+            <BentoCard
+              key={service.title}
+              service={service}
+              icon={serviceIcons[i + 1]}
+              index={i + 1}
+              inView={inView}
+            />
           ))}
 
           {/* Remaining cards */}
           {services.slice(3).map((service, i) => (
-            <BentoCard key={service.title} service={service} index={i + 3} inView={inView} />
+            <BentoCard
+              key={service.title}
+              service={service}
+              icon={serviceIcons[i + 3]}
+              index={i + 3}
+              inView={inView}
+            />
           ))}
         </div>
       </div>

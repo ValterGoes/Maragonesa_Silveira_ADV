@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import {
   MapPin,
   Clock,
@@ -9,17 +10,20 @@ import {
   Mail,
 } from "lucide-react";
 
-const WHATSAPP =
-  "https://wa.me/5551996839890?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20sobre%20meu%20benef%C3%ADcio%20previdenci%C3%A1rio.";
+const WHATSAPP_BASE =
+  "https://wa.me/5551996839890?text=";
 
 export default function ContactSection() {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
+
+  const whatsappUrl = WHATSAPP_BASE + encodeURIComponent(t('hero.whatsappMsg'));
 
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-cream py-20 sm:py-28 lg:py-44"
+      className="relative overflow-hidden bg-cream py-16 sm:py-20 lg:py-28"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 2xl:max-w-[1400px]" ref={ref}>
         <div className="grid gap-10 sm:gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-24">
@@ -33,7 +37,7 @@ export default function ContactSection() {
               <div className="h-px w-8 bg-burgundy" />
               <div className="h-px w-4 bg-gold" />
               <span className="text-[11px] font-semibold tracking-[0.3em] text-gold">
-                CONTATO
+                {t('contact.eyebrow')}
               </span>
             </motion.div>
 
@@ -43,15 +47,15 @@ export default function ContactSection() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="mb-10 font-sans text-3xl font-medium leading-[1.1] tracking-tight text-navy sm:text-4xl lg:text-5xl"
             >
-              Fale com um
+              {t('contact.title1')}
               <br />
-              <span className="text-navy/30">especialista</span>
+              <span className="text-navy/30">{t('contact.title2')}</span>
               <span className="text-burgundy">.</span>
             </motion.h2>
 
             {/* WhatsApp card */}
             <motion.a
-              href={WHATSAPP}
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, x: -20 }}
@@ -71,7 +75,7 @@ export default function ContactSection() {
                 </svg>
               </div>
               <div className="flex-1">
-                <p className="text-sm font-semibold text-navy">WhatsApp</p>
+                <p className="text-sm font-semibold text-navy">{t('contact.whatsapp')}</p>
                 <p className="text-sm text-gray-text">(51) 9683-9890</p>
               </div>
               <ArrowUpRight
@@ -92,7 +96,7 @@ export default function ContactSection() {
                 <Mail size={20} className="text-burgundy" />
               </div>
               <div className="flex-1">
-                <p className="text-sm font-semibold text-navy">E-mail</p>
+                <p className="text-sm font-semibold text-navy">{t('contact.email')}</p>
                 <p className="text-sm text-gray-text">
                   maragonesa.adv@gmail.com
                 </p>
@@ -125,7 +129,7 @@ export default function ContactSection() {
                 </svg>
               </div>
               <div className="flex-1">
-                <p className="text-sm font-semibold text-navy">Instagram</p>
+                <p className="text-sm font-semibold text-navy">{t('contact.instagram')}</p>
                 <p className="text-sm text-gray-text">@maragonesa</p>
               </div>
               <ArrowUpRight
@@ -147,12 +151,12 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-[11px] font-semibold tracking-wider text-navy/40">
-                    ENDEREÇO PRESENCIAL
+                    {t('contact.addressLabel')}
                   </p>
                   <p className="text-sm font-medium text-navy">
-                    Av. Praia de Belas, nº 1212
+                    {t('contact.addressLine1')}
                     <br />
-                    Praia de Belas, Porto Alegre - RS
+                    {t('contact.addressLine2')}
                   </p>
                 </div>
               </div>
@@ -163,10 +167,10 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-[11px] font-semibold tracking-wider text-navy/40">
-                    ATENDIMENTO ONLINE
+                    {t('contact.onlineLabel')}
                   </p>
                   <p className="text-sm font-medium text-navy">
-                    Disponível para todo o Brasil
+                    {t('contact.onlineText')}
                   </p>
                 </div>
               </div>
@@ -177,10 +181,10 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-[11px] font-semibold tracking-wider text-navy/40">
-                    HORÁRIO
+                    {t('contact.hoursLabel')}
                   </p>
                   <p className="text-sm font-medium text-navy">
-                    Seg a Sex, 9h às 18h
+                    {t('contact.hoursText')}
                   </p>
                 </div>
               </div>
@@ -197,7 +201,7 @@ export default function ContactSection() {
             {/* Map */}
             <div className="relative flex-1 overflow-hidden rounded-2xl border border-gray-border shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
               <iframe
-                title="Localização Maragonesa Silveira Advocacia"
+                title={t('contact.mapTitle')}
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.4!2d-51.2278!3d-30.0473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdf60e8d0e3dff5f8!2sAv.+Praia+de+Belas%2C+1212+-+Praia+de+Belas%2C+Porto+Alegre+-+RS!5e0!3m2!1spt-BR!2sbr!4v1"
                 width="100%"
                 height="100%"
@@ -216,7 +220,7 @@ export default function ContactSection() {
               >
                 <Navigation size={14} className="text-burgundy" />
                 <span className="text-xs font-semibold text-navy">
-                  Abrir no Google Maps
+                  {t('contact.openMaps')}
                 </span>
                 <ArrowUpRight
                   size={12}

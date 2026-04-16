@@ -1,10 +1,10 @@
 import { Mail } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import WhatsAppIcon from './WhatsAppIcon'
 import logoBranco from '../assets/images/logo_branco.png'
 import logo from '../assets/images/logo-valtergoes.svg'
 
-const WHATSAPP =
-  'https://wa.me/5551996839890?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20sobre%20meu%20benef%C3%ADcio%20previdenci%C3%A1rio.'
+const WHATSAPP_BASE = 'https://wa.me/5551996839890?text='
 
 const socialLinks = [
   { icon: 'linkedin', href: 'https://www.linkedin.com/in/maragonesa-silveira', label: 'LinkedIn', hoverColor: 'hover:border-[#0A66C2]/30 hover:text-[#0A66C2]' },
@@ -15,7 +15,10 @@ const socialLinks = [
 ]
 
 export default function Footer() {
+  const { t } = useTranslation()
   const year = new Date().getFullYear()
+
+  const whatsappUrl = WHATSAPP_BASE + encodeURIComponent(t('hero.whatsappMsg'))
 
   return (
     <footer className="grain relative overflow-hidden bg-charcoal">
@@ -24,20 +27,20 @@ export default function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-12 sm:flex-row sm:py-16 lg:px-10 2xl:max-w-[1400px]">
           <div>
             <h3 className="font-sans text-xl font-medium text-white sm:text-2xl lg:text-3xl">
-              Conquiste seu benefício<span className="text-burgundy">.</span>
+              {t('footer.ctaTitle')}<span className="text-burgundy">.</span>
             </h3>
             <p className="mt-1 text-sm text-white/30">
-              Agende uma consulta sem compromisso.
+              {t('footer.ctaSubtitle')}
             </p>
           </div>
           <a
-            href={WHATSAPP}
+            href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-shimmer group inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-sm font-semibold text-white sm:px-8 sm:py-4"
           >
             <WhatsAppIcon size={15} />
-            Falar com Especialista
+            {t('footer.ctaButton')}
           </a>
         </div>
       </div>
@@ -47,15 +50,16 @@ export default function Footer() {
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           {/* Brand */}
           <div className="flex items-start gap-4">
-            <img
-              src={logoBranco}
-              alt="Maragonesa Silveira Advocacia Previdenciária"
-              className="h-16 w-auto opacity-70"
-            />
+            <a href="#hero">
+              <img
+                src={logoBranco}
+                alt="Maragonesa Silveira Advocacia Previdenciária"
+                className="h-16 w-auto opacity-70 transition-opacity hover:opacity-100"
+              />
+            </a>
             <div>
               <p className="max-w-xs text-xs leading-relaxed text-white/25">
-                Especialistas em Direito Previdenciário e benefícios do INSS.
-                Atendimento humanizado em todo o Brasil.
+                {t('footer.brandDescription')}
               </p>
               <p className="mt-2 text-[10px] font-semibold tracking-wider text-gold/40">
                 OAB/RS: 17.398
@@ -67,9 +71,9 @@ export default function Footer() {
           <div className="flex flex-col gap-6 sm:flex-row sm:gap-10">
             {/* Quick links */}
             <div className="space-y-2">
-              <p className="text-[10px] font-semibold tracking-[0.2em] text-white/20">CONTATO</p>
+              <p className="text-[10px] font-semibold tracking-[0.2em] text-white/20">{t('footer.contactLabel')}</p>
               <a
-                href={WHATSAPP}
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-white/30 transition-colors hover:text-[#25D366]"
@@ -117,18 +121,18 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col gap-1 border-t border-white/[0.04] pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[11px] text-white/20">
-            &copy; {year} Maragonesa Silveira — Advocacia & Consultoria
+            &copy; {year} {t('footer.copyright')}
           </p>
-          
+
           <a
             href="https://valtergoes.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1 text-[11px] text-white/20 transition-colors hover:text-white/40"
           >
-            Desenvolvido por <img src={logo} alt="Valter Goes" className="h-8 w-20" />
+            {t('footer.developedBy')} <img src={logo} alt="Valter Goes" className="h-8 w-20" />
           </a>
-          
+
         </div>
       </div>
     </footer>

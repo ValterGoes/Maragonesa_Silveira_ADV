@@ -1,6 +1,7 @@
 import { useRef, useState, useCallback, useEffect } from 'react'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { Play, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 import thumbAposentadoria from '../assets/images/aposentadoria.webp'
 import thumbAuxilioDoenca from '../assets/images/auxilio-doenca.webp'
@@ -8,15 +9,15 @@ import thumbBeneficioNegado from '../assets/images/beneficio-negado.webp'
 import thumbAuxilioAcidente from '../assets/images/auxilio-acidente.webp'
 import thumbIsencao from '../assets/images/isencao-imposto.webp'
 
-const videos = [
-  { id: 'M7Pp0rcRMXo', caption: 'Planejamento Previdenciário', thumb: thumbAposentadoria },
-  { id: '93yJS05ofQQ', caption: 'Auxílio-Doença Negado', thumb: thumbAuxilioDoenca },
-  { id: 'G_st6ggeMvI', caption: 'Benefício INSS Negado', thumb: thumbBeneficioNegado },
-  { id: 'daXYaR9IJgo', caption: 'Auxílio-Acidente', thumb: thumbAuxilioAcidente },
-  { id: 'f4RqiAIx38A', caption: 'Isenção de Imposto de Renda', thumb: thumbIsencao },
+const videoData = [
+  { id: 'M7Pp0rcRMXo', thumb: thumbAposentadoria },
+  { id: '93yJS05ofQQ', thumb: thumbAuxilioDoenca },
+  { id: 'G_st6ggeMvI', thumb: thumbBeneficioNegado },
+  { id: 'daXYaR9IJgo', thumb: thumbAuxilioAcidente },
+  { id: 'f4RqiAIx38A', thumb: thumbIsencao },
 ]
 
-function LazyVideo({ id, caption, thumb, index, inView }) {
+function LazyVideo({ id, caption, thumb, index, inView, playLabel }) {
   const [playing, setPlaying] = useState(false)
   const handlePlay = useCallback(() => setPlaying(true), [])
 
@@ -41,7 +42,7 @@ function LazyVideo({ id, caption, thumb, index, inView }) {
           <button
             onClick={handlePlay}
             className="absolute inset-0 w-full h-full cursor-pointer border-none p-0 bg-black"
-            aria-label={`Reproduzir: ${caption}`}
+            aria-label={`${playLabel}: ${caption}`}
           >
             <img
               src={thumb}
@@ -60,6 +61,7 @@ function LazyVideo({ id, caption, thumb, index, inView }) {
 }
 
 export default function VideosSection() {
+  const { t } = useTranslation()
   const ref = useRef(null)
   const carouselRef = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
@@ -71,6 +73,8 @@ export default function VideosSection() {
     offset: ['start end', 'end start'],
   })
   const bgY = useTransform(scrollYProgress, [0, 1], [40, -40])
+
+  const captions = t('videos.captions', { returnObjects: true })
 
   const checkScroll = useCallback(() => {
     const el = carouselRef.current
@@ -96,7 +100,7 @@ export default function VideosSection() {
     if (!el) return
     const card = el.querySelector(':first-child')
     if (!card) return
-    const cardWidth = card.offsetWidth + 12 // card + gap
+    const cardWidth = card.offsetWidth + 12
     el.scrollBy({ left: dir === 'left' ? -cardWidth : cardWidth, behavior: 'smooth' })
   }
 
@@ -139,7 +143,7 @@ export default function VideosSection() {
         className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 select-none"
       >
         <span className="font-serif text-[16rem] font-bold leading-none text-navy/[0.03] xl:text-[50rem]">
-          Dicas
+          {t('videos.bgText')}
         </span>
       </motion.div>
 
@@ -152,7 +156,7 @@ export default function VideosSection() {
         >
           <div className="h-px w-12 bg-gold" />
           <span className="text-[11px] font-semibold tracking-[0.3em] text-gold">
-            DICAS PREVIDENCIÁRIAS
+            {t('videos.eyebrow')}
           </span>
         </motion.div>
 
@@ -164,9 +168,9 @@ export default function VideosSection() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="mb-4 font-sans text-3xl font-medium leading-[1.1] tracking-tight text-navy sm:text-4xl lg:text-5xl xl:text-6xl"
             >
-              Entenda seus
+              {t('videos.title1')}
               <br />
-              <span className="text-navy/30">direitos</span>
+              <span className="text-navy/30">{t('videos.title2')}</span>
               <span className="text-gold">.</span>
             </motion.h2>
 
@@ -176,8 +180,7 @@ export default function VideosSection() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="max-w-lg text-base leading-relaxed text-gray-text"
             >
-              Assista aos nossos vídeos e fique por dentro das regras previdenciárias
-              que podem fazer diferença no seu benefício.
+              {t('videos.subtitle')}
             </motion.p>
           </div>
 
@@ -192,7 +195,7 @@ export default function VideosSection() {
               onClick={() => scroll('left')}
               disabled={!canScrollLeft}
               className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-border bg-white text-navy transition-all duration-200 hover:border-gold/30 hover:shadow-md disabled:opacity-20 disabled:cursor-default"
-              aria-label="Anterior"
+              aria-label={t('videos.prev')}
             >
               <ChevronLeft size={18} />
             </button>
@@ -200,7 +203,7 @@ export default function VideosSection() {
               onClick={() => scroll('right')}
               disabled={!canScrollRight}
               className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-border bg-white text-navy transition-all duration-200 hover:border-gold/30 hover:shadow-md disabled:opacity-20 disabled:cursor-default"
-              aria-label="Próximo"
+              aria-label={t('videos.next')}
             >
               <ChevronRight size={18} />
             </button>
@@ -222,14 +225,15 @@ export default function VideosSection() {
             className="videos-carousel flex gap-3 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory cursor-grab"
             style={{ paddingInline: 'max(1rem, calc(50% - 150px))' }}
           >
-            {videos.map((video, index) => (
+            {videoData.map((video, index) => (
               <LazyVideo
                 key={video.id}
                 id={video.id}
-                caption={video.caption}
+                caption={captions[index]}
                 thumb={video.thumb}
                 index={index}
                 inView={inView}
+                playLabel={t('videos.play')}
               />
             ))}
           </div>
@@ -246,7 +250,7 @@ export default function VideosSection() {
             onClick={() => scroll('left')}
             disabled={!canScrollLeft}
             className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-border bg-white text-navy transition-all duration-200 hover:border-gold/30 disabled:opacity-20 disabled:cursor-default"
-            aria-label="Anterior"
+            aria-label={t('videos.prev')}
           >
             <ChevronLeft size={16} />
           </button>
@@ -254,7 +258,7 @@ export default function VideosSection() {
             onClick={() => scroll('right')}
             disabled={!canScrollRight}
             className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-border bg-white text-navy transition-all duration-200 hover:border-gold/30 disabled:opacity-20 disabled:cursor-default"
-            aria-label="Próximo"
+            aria-label={t('videos.next')}
           >
             <ChevronRight size={16} />
           </button>
@@ -274,7 +278,7 @@ export default function VideosSection() {
             className="group inline-flex items-center gap-2.5 rounded-full border border-[#ff0000]/20 bg-white px-6 py-3 text-sm font-semibold text-[#ff0000] transition-all duration-300 hover:bg-[#ff0000] hover:text-white hover:shadow-[0_8px_30px_rgba(255,0,0,0.15)]"
           >
             <Play size={16} className="fill-current" />
-            Ver mais no YouTube
+            {t('videos.youtube')}
           </a>
         </motion.div>
       </div>
