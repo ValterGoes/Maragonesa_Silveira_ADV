@@ -42,7 +42,7 @@ function BentoCard({ service, icon, index, large, inView, featuredLabel }) {
         </div>
         <h3 className="text-lg font-semibold text-white/90">{service.title}</h3>
         <p
-          className={`mt-2 text-sm leading-relaxed text-white/30 transition-colors duration-300 group-hover:text-white/50 ${
+          className={`mt-2 text-sm leading-relaxed text-white/30 transition-colors duration-300 group-hover:text-white/50 whitespace-pre-line ${
             large ? '' : 'line-clamp-3'
           }`}
         >
