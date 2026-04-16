@@ -37,3 +37,14 @@
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
 </IfModule>
+
+# Forçar o MIME type correto para módulos JavaScript (Corrige o erro de text/plain)
+<IfModule mod_mime.c>
+  AddType application/javascript .js
+  AddType application/javascript .mjs
+</IfModule>
+
+# Desativar o farejamento de MIME type (X-Content-Type-Options)
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+</IfModule>
