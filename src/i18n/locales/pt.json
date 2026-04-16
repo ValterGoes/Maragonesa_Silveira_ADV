@@ -1,0 +1,141 @@
+{
+  "header": {
+    "brand": "Advocacia & Consultoria",
+    "nav": {
+      "services": "Serviços",
+      "about": "Sobre",
+      "videos": "Vídeos",
+      "contact": "Contato"
+    },
+    "cta": "Consultar",
+    "ctaMobile": "Consultar Especialista"
+  },
+  "hero": {
+    "eyebrow": "MARAGONESA SILVEIRA",
+    "headline1": "Advocacia",
+    "headline2": "Previdenciária",
+    "headline3": "que protege",
+    "headline4": "seus direitos",
+    "subtitle": "Orientação especializada e atendimento humanizado. Simplificamos cada etapa e garantimos que seus direitos junto ao INSS sejam respeitados.",
+    "cta": "Consultar Especialista",
+    "explore": "Explorar serviços",
+    "badge": "ESPECIALISTA",
+    "badgeTitle": "Direito Previdenciário",
+    "imgAlt": "Advocacia Previdenciária — Maragonesa Silveira",
+    "whatsappMsg": "Olá! Gostaria de agendar uma consulta sobre meu benefício previdenciário."
+  },
+  "services": {
+    "eyebrow": "NOSSOS SERVIÇOS",
+    "title1": "Expertise onde",
+    "title2": "você mais precisa",
+    "featured": "Serviço principal",
+    "items": [
+      {
+        "title": "Aposentadorias",
+        "description": "Aposentadoria por tempo de contribuição, por idade, com tempo rural e especial. Concessão do benefício e revisão do valor."
+      },
+      {
+        "title": "Auxílio-Doença",
+        "description": "Impossibilitado de trabalhar em razão da doença, pode ter direito ao auxílio por incapacidade temporária ou permanente."
+      },
+      {
+        "title": "Auxílio-Acidente",
+        "description": "Benefício pago ao segurado que sofreu um acidente e ficou com sequelas que reduzem sua capacidade de trabalho."
+      },
+      {
+        "title": "Isenção do IR",
+        "description": "Isenção de imposto de renda por doenças graves, como neoplasia maligna, cardiopatia grave, alienação mental e outros."
+      },
+      {
+        "title": "LOAS (BPC)",
+        "description": "Benefício assistencial para deficiente ou idoso em situação de baixa renda."
+      },
+      {
+        "title": "Quitação de Imóvel",
+        "description": "Análise do contrato para possibilidade de quitação do imóvel diante da invalidez ou morte do contratante."
+      },
+      {
+        "title": "Pensão por Morte",
+        "description": "Benefício pago aos dependentes do segurado falecido. Revisão de valores e cotas."
+      },
+      {
+        "title": "Adicional de 25%",
+        "description": "Valor adicional para aposentados por invalidez que necessitam de cuidados de outra pessoa."
+      }
+    ]
+  },
+  "videos": {
+    "eyebrow": "DICAS PREVIDENCIÁRIAS",
+    "title1": "Entenda seus",
+    "title2": "direitos",
+    "subtitle": "Assista aos nossos vídeos e fique por dentro das regras previdenciárias que podem fazer diferença no seu benefício.",
+    "play": "Reproduzir",
+    "prev": "Anterior",
+    "next": "Próximo",
+    "youtube": "Ver mais no YouTube",
+    "bgText": "Dicas",
+    "captions": [
+      "Planejamento Previdenciário",
+      "Auxílio-Doença Negado",
+      "Benefício INSS Negado",
+      "Auxílio-Acidente",
+      "Isenção de Imposto de Renda"
+    ]
+  },
+  "about": {
+    "eyebrow": "SOBRE NÓS",
+    "bgText": "Sobre",
+    "title1": "Especialização",
+    "title2": "& empatia",
+    "title3": "em cada caso",
+    "description": "Somos especialistas em <strong>direito previdenciário junto ao INSS</strong>. Nossa equipe conhece profundamente as regras previdenciárias e luta incansavelmente pelos direitos dos nossos clientes. Acreditamos que a advocacia de excelência nasce quando o conhecimento técnico se encontra com a empatia genuína.",
+    "imgAlt": "Maragonesa Silveira — Advogada Previdenciária em Porto Alegre",
+    "cards": [
+      {
+        "label": "Atendimento Nacional",
+        "sub": "Presencial em Porto Alegre ou 100% online para todo o Brasil."
+      },
+      {
+        "label": "Atendimento Personalizado",
+        "sub": "Cada caso é único. Estratégias sob medida focadas em você."
+      },
+      {
+        "label": "Processos Eletrônicos",
+        "sub": "Resolva tudo com praticidade e segurança, sem sair de casa."
+      }
+    ],
+    "location": "Localizados na <strong>Av. Praia de Belas, nº 1212 sala 424 — Porto Alegre, RS</strong>, atendemos clientes de todo o Brasil com compromisso, transparência e resultados."
+  },
+  "contact": {
+    "eyebrow": "CONTATO",
+    "title1": "Fale com um",
+    "title2": "especialista",
+    "whatsapp": "WhatsApp",
+    "email": "E-mail",
+    "instagram": "Instagram",
+    "addressLabel": "ENDEREÇO PRESENCIAL",
+    "addressLine1": "Av. Praia de Belas, nº 1212",
+    "addressLine2": "Praia de Belas, Porto Alegre - RS",
+    "onlineLabel": "ATENDIMENTO ONLINE",
+    "onlineText": "Disponível para todo o Brasil",
+    "hoursLabel": "HORÁRIO",
+    "hoursText": "Seg a Sex, 9h às 18h",
+    "mapTitle": "Localização Maragonesa Silveira Advocacia",
+    "openMaps": "Abrir no Google Maps"
+  },
+  "footer": {
+    "ctaTitle": "Conquiste seu benefício",
+    "ctaSubtitle": "Agende uma consulta sem compromisso.",
+    "ctaButton": "Falar com Especialista",
+    "brandDescription": "Especialistas em Direito Previdenciário e benefícios do INSS. Atendimento humanizado em todo o Brasil.",
+    "contactLabel": "CONTATO",
+    "copyright": "Maragonesa Silveira — Advocacia & Consultoria",
+    "developedBy": "Desenvolvido por"
+  },
+  "whatsappButton": {
+    "ariaLabel": "Fale conosco pelo WhatsApp"
+  },
+  "languageSelector": {
+    "label": "Idioma"
+  }
+}

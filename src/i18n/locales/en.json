@@ -1,0 +1,141 @@
+{
+  "header": {
+    "brand": "Law Firm & Consulting",
+    "nav": {
+      "services": "Services",
+      "about": "About",
+      "videos": "Videos",
+      "contact": "Contact"
+    },
+    "cta": "Get in Touch",
+    "ctaMobile": "Talk to a Specialist"
+  },
+  "hero": {
+    "eyebrow": "MARAGONESA SILVEIRA",
+    "headline1": "Social Security",
+    "headline2": "Law Firm",
+    "headline3": "protecting",
+    "headline4": "your rights",
+    "subtitle": "Expert guidance and personalized support. We simplify every step and ensure your social security rights are fully upheld.",
+    "cta": "Talk to a Specialist",
+    "explore": "Explore services",
+    "badge": "SPECIALIST",
+    "badgeTitle": "Social Security Law",
+    "imgAlt": "Social Security Law Firm — Maragonesa Silveira",
+    "whatsappMsg": "Hello! I would like to schedule a consultation about my social security benefits."
+  },
+  "services": {
+    "eyebrow": "OUR SERVICES",
+    "title1": "Expertise where",
+    "title2": "you need it most",
+    "featured": "Core service",
+    "items": [
+      {
+        "title": "Retirement Benefits",
+        "description": "Retirement by length of contribution, by age, with rural or hazardous work credit. Benefit approval and amount review."
+      },
+      {
+        "title": "Disability Benefits",
+        "description": "If you are unable to work due to illness, you may be entitled to temporary or permanent disability benefits."
+      },
+      {
+        "title": "Accident Benefits",
+        "description": "Benefit granted to policyholders who suffered an accident resulting in reduced work capacity."
+      },
+      {
+        "title": "Income Tax Exemption",
+        "description": "Tax exemption for serious medical conditions such as cancer, severe heart disease, mental disorders, and others."
+      },
+      {
+        "title": "LOAS (BPC)",
+        "description": "Social assistance benefit for disabled individuals or elderly people in low-income situations."
+      },
+      {
+        "title": "Mortgage Discharge",
+        "description": "Contract review for the possibility of property payoff in the event of disability or death of the borrower."
+      },
+      {
+        "title": "Survivor's Pension",
+        "description": "Benefit paid to dependents of a deceased policyholder. Review of amounts and shares."
+      },
+      {
+        "title": "25% Supplement",
+        "description": "Additional allowance for disability retirees who require assistance from a caregiver."
+      }
+    ]
+  },
+  "videos": {
+    "eyebrow": "SOCIAL SECURITY TIPS",
+    "title1": "Know your",
+    "title2": "rights",
+    "subtitle": "Watch our videos and stay informed about the social security rules that can make a difference in your benefits.",
+    "play": "Play",
+    "prev": "Previous",
+    "next": "Next",
+    "youtube": "See more on YouTube",
+    "bgText": "Tips",
+    "captions": [
+      "Social Security Planning",
+      "Disability Benefit Denied",
+      "INSS Benefit Denied",
+      "Accident Benefits",
+      "Income Tax Exemption"
+    ]
+  },
+  "about": {
+    "eyebrow": "ABOUT US",
+    "bgText": "About",
+    "title1": "Expertise",
+    "title2": "& empathy",
+    "title3": "in every case",
+    "description": "We are specialists in <strong>social security law and INSS proceedings</strong>. Our team has deep knowledge of social security regulations and fights tirelessly for our clients' rights. We believe that legal excellence is born when technical expertise meets genuine empathy.",
+    "imgAlt": "Maragonesa Silveira — Social Security Lawyer in Porto Alegre",
+    "cards": [
+      {
+        "label": "Nationwide Service",
+        "sub": "In-person in Porto Alegre or 100% online across Brazil."
+      },
+      {
+        "label": "Personalized Attention",
+        "sub": "Every case is unique. Tailored strategies focused on you."
+      },
+      {
+        "label": "Digital Processes",
+        "sub": "Resolve everything conveniently and securely from the comfort of your home."
+      }
+    ],
+    "location": "Located at <strong>Av. Praia de Belas, 1212, Suite 424 — Porto Alegre, RS, Brazil</strong>, we serve clients across the country with commitment, transparency, and results."
+  },
+  "contact": {
+    "eyebrow": "CONTACT",
+    "title1": "Talk to a",
+    "title2": "specialist",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "instagram": "Instagram",
+    "addressLabel": "OFFICE ADDRESS",
+    "addressLine1": "Av. Praia de Belas, 1212",
+    "addressLine2": "Praia de Belas, Porto Alegre - RS, Brazil",
+    "onlineLabel": "ONLINE SERVICE",
+    "onlineText": "Available throughout Brazil",
+    "hoursLabel": "BUSINESS HOURS",
+    "hoursText": "Mon to Fri, 9 AM – 6 PM (BRT)",
+    "mapTitle": "Maragonesa Silveira Law Firm Location",
+    "openMaps": "Open in Google Maps"
+  },
+  "footer": {
+    "ctaTitle": "Claim your benefits",
+    "ctaSubtitle": "Schedule a free consultation.",
+    "ctaButton": "Talk to a Specialist",
+    "brandDescription": "Specialists in Social Security Law and INSS benefits. Personalized service across Brazil.",
+    "contactLabel": "CONTACT",
+    "copyright": "Maragonesa Silveira — Law Firm & Consulting",
+    "developedBy": "Developed by"
+  },
+  "whatsappButton": {
+    "ariaLabel": "Contact us via WhatsApp"
+  },
+  "languageSelector": {
+    "label": "Language"
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "header": {
+    "brand": "Abogacía y Consultoría",
+    "nav": {
+      "services": "Servicios",
+      "about": "Nosotros",
+      "videos": "Videos",
+      "contact": "Contacto"
+    },
+    "cta": "Consultar",
+    "ctaMobile": "Consultar Especialista"
+  },
+  "hero": {
+    "eyebrow": "MARAGONESA SILVEIRA",
+    "headline1": "Abogacía",
+    "headline2": "Previsional",
+    "headline3": "que protege",
+    "headline4": "sus derechos",
+    "subtitle": "Asesoramiento especializado y atención personalizada. Simplificamos cada etapa y garantizamos que sus derechos ante la seguridad social sean respetados.",
+    "cta": "Consultar Especialista",
+    "explore": "Explorar servicios",
+    "badge": "ESPECIALISTA",
+    "badgeTitle": "Derecho Previsional",
+    "imgAlt": "Abogacía Previsional — Maragonesa Silveira",
+    "whatsappMsg": "¡Hola! Me gustaría agendar una consulta sobre mis beneficios de seguridad social."
+  },
+  "services": {
+    "eyebrow": "NUESTROS SERVICIOS",
+    "title1": "Experiencia donde",
+    "title2": "más la necesita",
+    "featured": "Servicio principal",
+    "items": [
+      {
+        "title": "Jubilaciones",
+        "description": "Jubilación por tiempo de aportes, por edad, con períodos rurales y especiales. Otorgamiento del beneficio y revisión del monto."
+      },
+      {
+        "title": "Subsidio por Enfermedad",
+        "description": "Si no puede trabajar debido a una enfermedad, puede tener derecho al subsidio por incapacidad temporal o permanente."
+      },
+      {
+        "title": "Subsidio por Accidente",
+        "description": "Beneficio otorgado al asegurado que sufrió un accidente y quedó con secuelas que reducen su capacidad laboral."
+      },
+      {
+        "title": "Exención del IRPF",
+        "description": "Exención del impuesto sobre la renta por enfermedades graves, como neoplasias malignas, cardiopatías graves, alienación mental y otras."
+      },
+      {
+        "title": "LOAS (BPC)",
+        "description": "Beneficio asistencial para personas con discapacidad o adultos mayores en situación de bajos ingresos."
+      },
+      {
+        "title": "Cancelación de Hipoteca",
+        "description": "Análisis del contrato para la posibilidad de cancelación de la hipoteca ante la invalidez o fallecimiento del titular."
+      },
+      {
+        "title": "Pensión por Fallecimiento",
+        "description": "Beneficio otorgado a los dependientes del asegurado fallecido. Revisión de montos y cuotas."
+      },
+      {
+        "title": "Adicional del 25%",
+        "description": "Monto adicional para jubilados por invalidez que necesitan asistencia de otra persona."
+      }
+    ]
+  },
+  "videos": {
+    "eyebrow": "CONSEJOS PREVISIONALES",
+    "title1": "Conozca sus",
+    "title2": "derechos",
+    "subtitle": "Vea nuestros videos e infórmese sobre las reglas de seguridad social que pueden marcar la diferencia en sus beneficios.",
+    "play": "Reproducir",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "youtube": "Ver más en YouTube",
+    "bgText": "Consejos",
+    "captions": [
+      "Planificación Previsional",
+      "Subsidio por Enfermedad Denegado",
+      "Beneficio INSS Denegado",
+      "Subsidio por Accidente",
+      "Exención del Impuesto sobre la Renta"
+    ]
+  },
+  "about": {
+    "eyebrow": "SOBRE NOSOTROS",
+    "bgText": "Nosotros",
+    "title1": "Especialización",
+    "title2": "y empatía",
+    "title3": "en cada caso",
+    "description": "Somos especialistas en <strong>derecho previsional ante el INSS</strong>. Nuestro equipo conoce a fondo las normativas de seguridad social y lucha incansablemente por los derechos de nuestros clientes. Creemos que la excelencia jurídica nace cuando el conocimiento técnico se encuentra con la empatía genuina.",
+    "imgAlt": "Maragonesa Silveira — Abogada Previsional en Porto Alegre",
+    "cards": [
+      {
+        "label": "Atención Nacional",
+        "sub": "Presencial en Porto Alegre o 100% en línea para todo Brasil."
+      },
+      {
+        "label": "Atención Personalizada",
+        "sub": "Cada caso es único. Estrategias a medida centradas en usted."
+      },
+      {
+        "label": "Procesos Electrónicos",
+        "sub": "Resuelva todo con comodidad y seguridad, sin salir de su hogar."
+      }
+    ],
+    "location": "Ubicados en la <strong>Av. Praia de Belas, 1212, oficina 424 — Porto Alegre, RS, Brasil</strong>, atendemos clientes en todo el país con compromiso, transparencia y resultados."
+  },
+  "contact": {
+    "eyebrow": "CONTACTO",
+    "title1": "Hable con un",
+    "title2": "especialista",
+    "whatsapp": "WhatsApp",
+    "email": "Correo electrónico",
+    "instagram": "Instagram",
+    "addressLabel": "DIRECCIÓN PRESENCIAL",
+    "addressLine1": "Av. Praia de Belas, 1212",
+    "addressLine2": "Praia de Belas, Porto Alegre - RS, Brasil",
+    "onlineLabel": "ATENCIÓN EN LÍNEA",
+    "onlineText": "Disponible en todo Brasil",
+    "hoursLabel": "HORARIO",
+    "hoursText": "Lun a Vie, 9 h a 18 h (hora de Brasilia)",
+    "mapTitle": "Ubicación de Maragonesa Silveira Abogacía",
+    "openMaps": "Abrir en Google Maps"
+  },
+  "footer": {
+    "ctaTitle": "Obtenga su beneficio",
+    "ctaSubtitle": "Agende una consulta sin compromiso.",
+    "ctaButton": "Hablar con un Especialista",
+    "brandDescription": "Especialistas en Derecho Previsional y beneficios del INSS. Atención personalizada en todo Brasil.",
+    "contactLabel": "CONTACTO",
+    "copyright": "Maragonesa Silveira — Abogacía y Consultoría",
+    "developedBy": "Desarrollado por"
+  },
+  "whatsappButton": {
+    "ariaLabel": "Contáctenos por WhatsApp"
+  },
+  "languageSelector": {
+    "label": "Idioma"
+  }
+}
