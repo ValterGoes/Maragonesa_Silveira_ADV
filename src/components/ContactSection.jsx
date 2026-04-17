@@ -291,11 +291,11 @@ export default function ContactSection() {
                 src={current.mapSrc}
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: 300 }}
+                style={{ border: 0, minHeight: 240 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="sm:min-h-[360px] lg:min-h-[420px]"
+                className="sm:min-h-[280px] lg:min-h-[340px]"
               />
               {/* Floating badge */}
               <a
