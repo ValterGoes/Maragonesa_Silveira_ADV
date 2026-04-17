@@ -189,7 +189,7 @@ export default function ContactSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.6 }}
-              className="mt-8 space-y-5"
+              className="mt-8 space-y-2"
             >
               <button
                 type="button"
@@ -291,11 +291,11 @@ export default function ContactSection() {
                 src={current.mapSrc}
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: 240 }}
+                style={{ border: 0, minHeight: 200 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="sm:min-h-[280px] lg:min-h-[340px]"
+                className="sm:min-h-[200px] lg:min-h-[240px]"
               />
               {/* Floating badge */}
               <a
