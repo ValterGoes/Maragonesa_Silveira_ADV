@@ -10,6 +10,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout
@@ -33,8 +34,9 @@ jobs:
           server: "${{ secrets.FTP_SERVER }}"
           username: "${{ secrets.FTP_USERNAME }}"
           password: "${{ secrets.FTP_PASSWORD }}"
-          protocol: ftp               # <-- Adicione isso para forçar FTP padrão
-          port: 21                    # <-- Adicione a porta explicitamente
+          protocol: ftp
+          port: 21
           local-dir: ./dist/
           server-dir: ./
+          timeout: 120000
           dangerous-clean-slate: true
