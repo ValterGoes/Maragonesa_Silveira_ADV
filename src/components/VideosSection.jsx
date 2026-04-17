@@ -26,7 +26,7 @@ function LazyVideo({ id, caption, thumb, index, inView, playLabel }) {
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-      className="group relative flex-none w-[260px] snap-center overflow-hidden rounded-2xl border border-gray-border bg-white shadow-[0_1px_3px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-gold/20 hover:shadow-[0_8px_30px_rgba(197,160,89,0.08)] sm:w-[280px] lg:w-[220px] xl:w-[230px] 2xl:w-[260px]"
+      className="group relative flex-none w-[78vw] snap-center overflow-hidden rounded-2xl border border-gray-border bg-white shadow-none transition-all duration-300 hover:border-gold/20 sm:w-[280px] sm:hover:shadow-[0_8px_30px_rgba(197,160,89,0.08)] lg:w-[220px] xl:w-[230px] 2xl:w-[260px]"
     >
       <div className="relative aspect-[9/16] bg-black overflow-hidden rounded-t-2xl">
         {playing ? (
