@@ -69,7 +69,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-cream py-16 sm:py-20 lg:py-28"
+      className="relative overflow-hidden bg-cream py-10 sm:py-14 lg:py-16"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 2xl:max-w-[1400px]" ref={ref}>
         <div className="grid gap-10 sm:gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-24">
