@@ -36,5 +36,5 @@ jobs:
           protocol: ftp               # <-- Adicione isso para forçar FTP padrão
           port: 21                    # <-- Adicione a porta explicitamente
           local-dir: ./dist/
-          server-dir: public_html/
+          server-dir: ./
           dangerous-clean-slate: true
