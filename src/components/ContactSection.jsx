@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import {
@@ -13,12 +13,58 @@ import {
 const WHATSAPP_BASE =
   "https://wa.me/5551996839890?text=";
 
+const locations = {
+  poa: {
+    lat: -30.0473,
+    lng: -51.2278,
+    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.4!2d-51.2278!3d-30.0473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdf60e8d0e3dff5f8!2sAv.+Praia+de+Belas%2C+1212+-+Praia+de+Belas%2C+Porto+Alegre+-+RS!5e0!3m2!1spt-BR!2sbr!4v1",
+    mapsUrl: "https://maps.google.com/?cid=16087064335138607864",
+  },
+  bc: {
+    lat: -26.9906,
+    lng: -48.6348,
+    mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3553.8!2d-48.6348!3d-26.9906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sR.+55%2C+50+-+Centro%2C+Balne%C3%A1rio+Cambori%C3%BA+-+SC!5e0!3m2!1spt-BR!2sbr!4v1",
+    mapsUrl: "https://www.google.com/maps/search/R.+55,+50+-+Centro,+Balne%C3%A1rio+Cambori%C3%BA+-+SC",
+  },
+};
+
+function getDistance(lat1, lng1, lat2, lng2) {
+  const R = 6371;
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLng = ((lng2 - lng1) * Math.PI) / 180;
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos((lat1 * Math.PI) / 180) *
+      Math.cos((lat2 * Math.PI) / 180) *
+      Math.sin(dLng / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function getClosestOffice(userLat, userLng) {
+  const distPoa = getDistance(userLat, userLng, locations.poa.lat, locations.poa.lng);
+  const distBc = getDistance(userLat, userLng, locations.bc.lat, locations.bc.lng);
+  return distBc < distPoa ? "bc" : "poa";
+}
+
 export default function ContactSection() {
   const { t } = useTranslation();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
+  const [activeLocation, setActiveLocation] = useState("poa");
 
   const whatsappUrl = WHATSAPP_BASE + encodeURIComponent(t('hero.whatsappMsg'));
+  const current = locations[activeLocation];
+
+  useEffect(() => {
+    fetch("https://ipapi.co/json/")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.latitude && data.longitude) {
+          setActiveLocation(getClosestOffice(data.latitude, data.longitude));
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     <section
@@ -145,8 +191,20 @@ export default function ContactSection() {
               transition={{ delay: 0.6 }}
               className="mt-8 space-y-5"
             >
-              <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-border bg-white">
+              <button
+                type="button"
+                onClick={() => setActiveLocation("poa")}
+                className={`flex w-full items-start gap-4 rounded-xl p-3 text-left transition-all duration-300 ${
+                  activeLocation === "poa"
+                    ? "border border-burgundy/20 bg-white shadow-[0_4px_20px_rgba(74,111,165,0.06)]"
+                    : "border border-transparent hover:bg-white/60"
+                }`}
+              >
+                <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-colors duration-300 ${
+                  activeLocation === "poa"
+                    ? "border-burgundy/20 bg-burgundy/10"
+                    : "border-gray-border bg-white"
+                }`}>
                   <MapPin size={16} className="text-burgundy" />
                 </div>
                 <div>
@@ -159,7 +217,35 @@ export default function ContactSection() {
                     {t('contact.addressLine2')}
                   </p>
                 </div>
-              </div>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveLocation("bc")}
+                className={`flex w-full items-start gap-4 rounded-xl p-3 text-left transition-all duration-300 ${
+                  activeLocation === "bc"
+                    ? "border border-burgundy/20 bg-white shadow-[0_4px_20px_rgba(74,111,165,0.06)]"
+                    : "border border-transparent hover:bg-white/60"
+                }`}
+              >
+                <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-colors duration-300 ${
+                  activeLocation === "bc"
+                    ? "border-burgundy/20 bg-burgundy/10"
+                    : "border-gray-border bg-white"
+                }`}>
+                  <MapPin size={16} className="text-burgundy" />
+                </div>
+                <div>
+                  <p className="text-[11px] font-semibold tracking-wider text-navy/40">
+                    {t('contact.address2Label')}
+                  </p>
+                  <p className="text-sm font-medium text-navy">
+                    {t('contact.address2Line1')}
+                    <br />
+                    {t('contact.address2Line2')}
+                  </p>
+                </div>
+              </button>
 
               <div className="flex items-start gap-4">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-border bg-white">
@@ -202,7 +288,7 @@ export default function ContactSection() {
             <div className="relative flex-1 overflow-hidden rounded-2xl border border-gray-border shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
               <iframe
                 title={t('contact.mapTitle')}
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.4!2d-51.2278!3d-30.0473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdf60e8d0e3dff5f8!2sAv.+Praia+de+Belas%2C+1212+-+Praia+de+Belas%2C+Porto+Alegre+-+RS!5e0!3m2!1spt-BR!2sbr!4v1"
+                src={current.mapSrc}
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: 300 }}
@@ -213,7 +299,7 @@ export default function ContactSection() {
               />
               {/* Floating badge */}
               <a
-                href="https://maps.google.com/?cid=16087064335138607864"
+                href={current.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group absolute bottom-4 left-4 flex items-center gap-2 rounded-xl border border-white/20 bg-white/90 px-4 py-2.5 shadow-lg backdrop-blur-md transition-all duration-300 hover:bg-white hover:shadow-xl"

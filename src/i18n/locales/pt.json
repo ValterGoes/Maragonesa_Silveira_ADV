@@ -93,7 +93,7 @@
     "cards": [
       {
         "label": "Atendimento Nacional",
-        "sub": "Presencial em Porto Alegre ou 100% online para todo o Brasil."
+        "sub": "Presencial em Porto Alegre e Balneário Camboriú ou 100% online para todo o Brasil."
       },
       {
         "label": "Atendimento Personalizado",
@@ -104,7 +104,7 @@
         "sub": "Resolva tudo com praticidade e segurança, sem sair de casa."
       }
     ],
-    "location": "Localizados na <strong>Av. Praia de Belas, nº 1212 sala 424 — Porto Alegre, RS</strong>, atendemos clientes de todo o Brasil com compromisso, transparência e resultados."
+    "location": "Localizados na <strong>Av. Praia de Belas, nº 1212 sala 424 — Porto Alegre, RS</strong> e na <strong>R. 55, nº 50 — Centro, Balneário Camboriú, SC</strong>, atendemos clientes de todo o Brasil com compromisso, transparência e resultados."
   },
   "contact": {
     "eyebrow": "CONTATO",
@@ -113,9 +113,12 @@
     "whatsapp": "WhatsApp",
     "email": "E-mail",
     "instagram": "Instagram",
-    "addressLabel": "ENDEREÇO PRESENCIAL",
+    "addressLabel": "PORTO ALEGRE",
     "addressLine1": "Av. Praia de Belas, nº 1212",
     "addressLine2": "Praia de Belas, Porto Alegre - RS",
+    "address2Label": "BALNEÁRIO CAMBORIÚ",
+    "address2Line1": "R. 55, nº 50",
+    "address2Line2": "Centro, Balneário Camboriú - SC",
     "onlineLabel": "ATENDIMENTO ONLINE",
     "onlineText": "Disponível para todo o Brasil",
     "hoursLabel": "HORÁRIO",

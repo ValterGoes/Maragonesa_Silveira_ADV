@@ -93,7 +93,7 @@
     "cards": [
       {
         "label": "Nationwide Service",
-        "sub": "In-person in Porto Alegre or 100% online across Brazil."
+        "sub": "In-person in Porto Alegre and Balneário Camboriú or 100% online across Brazil."
       },
       {
         "label": "Personalized Attention",
@@ -104,7 +104,7 @@
         "sub": "Resolve everything conveniently and securely from the comfort of your home."
       }
     ],
-    "location": "Located at <strong>Av. Praia de Belas, 1212, Suite 424 — Porto Alegre, RS, Brazil</strong>, we serve clients across the country with commitment, transparency, and results."
+    "location": "Located at <strong>Av. Praia de Belas, 1212, Suite 424 — Porto Alegre, RS</strong> and <strong>R. 55, 50 — Centro, Balneário Camboriú, SC, Brazil</strong>, we serve clients across the country with commitment, transparency, and results."
   },
   "contact": {
     "eyebrow": "CONTACT",
@@ -113,9 +113,12 @@
     "whatsapp": "WhatsApp",
     "email": "Email",
     "instagram": "Instagram",
-    "addressLabel": "OFFICE ADDRESS",
+    "addressLabel": "PORTO ALEGRE",
     "addressLine1": "Av. Praia de Belas, 1212",
     "addressLine2": "Praia de Belas, Porto Alegre - RS, Brazil",
+    "address2Label": "BALNEÁRIO CAMBORIÚ",
+    "address2Line1": "R. 55, 50",
+    "address2Line2": "Centro, Balneário Camboriú - SC, Brazil",
     "onlineLabel": "ONLINE SERVICE",
     "onlineText": "Available throughout Brazil",
     "hoursLabel": "BUSINESS HOURS",
