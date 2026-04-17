@@ -22,14 +22,14 @@ export default function AboutSection() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative overflow-hidden bg-cream py-20 sm:py-28 lg:py-40"
+      className="relative overflow-hidden bg-cream py-16 sm:py-22 lg:py-32"
     >
       {/* Large background text */}
       <motion.div
         style={{ y: bgY }}
-        className="pointer-events-none absolute -left-8 top-1/2 -translate-y-1/2 select-none"
+        className="pointer-events-none absolute -left-8 top-1/3 -translate-y-1/2 select-none overflow-hidden max-w-full"
       >
-        <span className="font-serif text-[16rem] font-bold leading-none text-navy/[0.03] sm:text-[26rem] lg:text-[50rem]">
+        <span className="font-serif text-[10rem] font-bold leading-none text-navy/[0.03] sm:text-[16rem] md:text-[20rem] lg:text-[26rem] xl:text-[30rem] 2xl:text-[38rem]">
           {t('about.bgText')}
         </span>
       </motion.div>
@@ -108,28 +108,21 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.6 + i * 0.1 }}
-              className="group relative flex-1 overflow-hidden rounded-2xl border border-gray-border bg-white p-6 transition-all duration-300 hover:border-burgundy/20 hover:shadow-[0_8px_30px_rgba(74,111,165,0.06)]"
+              className="group relative flex-1 overflow-hidden rounded-2xl border border-gray-border bg-white p-8 sm:p-10 transition-all duration-300 hover:border-burgundy/20 hover:shadow-[0_8px_30px_rgba(74,111,165,0.06)]"
             >
-              <span className="absolute -right-2 -top-4 font-serif text-6xl font-bold text-burgundy/[0.04] transition-colors group-hover:text-burgundy/[0.08]">
+              <span className="absolute -right-2 -top-4 font-serif text-7xl font-bold text-burgundy/[0.04] transition-colors group-hover:text-burgundy/[0.08]">
                 {String(i + 1).padStart(2, '0')}
               </span>
-              <p className="relative text-sm font-semibold text-navy">
+              <p className="relative text-base font-semibold text-navy sm:text-lg">
                 {label}
               </p>
-              <p className="relative mt-2 text-xs leading-relaxed text-gray-text">
+              <p className="relative mt-3 text-sm leading-relaxed text-gray-text">
                 {sub}
               </p>
             </motion.div>
           ))}
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-8 text-sm leading-relaxed text-gray-text"
-          dangerouslySetInnerHTML={{ __html: t('about.location') }}
-        />
       </div>
     </section>
   );

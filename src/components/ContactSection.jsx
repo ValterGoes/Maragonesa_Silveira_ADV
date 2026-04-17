@@ -247,7 +247,7 @@ export default function ContactSection() {
                 </div>
               </button>
 
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 p-3">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-border bg-white">
                   <Globe size={16} className="text-burgundy" />
                 </div>
@@ -261,7 +261,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-4 p-3">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-border bg-white">
                   <Clock size={16} className="text-burgundy" />
                 </div>

@@ -140,9 +140,9 @@ export default function VideosSection() {
       {/* Parallax bg logo */}
       <motion.div
         style={{ y: bgY }}
-        className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 select-none"
+        className="pointer-events-none absolute right-0 top-1/3 -translate-y-1/2 select-none overflow-hidden max-w-full"
       >
-        <span className="font-serif text-[16rem] font-bold leading-none text-navy/[0.03] xl:text-[50rem]">
+        <span className="font-serif text-[10rem] font-bold leading-none text-navy/[0.03] sm:text-[16rem] md:text-[20rem] lg:text-[26rem] xl:text-[30rem] 2xl:text-[38rem]">
           {t('videos.bgText')}
         </span>
       </motion.div>
