@@ -73,7 +73,7 @@
     "prev": "Anterior",
     "next": "Próximo",
     "youtube": "Ver mais no YouTube",
-    "bgText": "Dicas",
+    "bgText": "Dicas Previdenciárias",
     "captions": [
       "Planejamento Previdenciário",
       "Auxílio-Doença Negado",
@@ -84,7 +84,7 @@
   },
   "about": {
     "eyebrow": "SOBRE NÓS",
-    "bgText": "Sobre",
+    "bgText": "Sobre Nós",
     "title1": "Especialização",
     "title2": "& empatia",
     "title3": "em cada caso",
@@ -103,8 +103,7 @@
         "label": "Processos Eletrônicos",
         "sub": "Resolva tudo com praticidade e segurança, sem sair de casa."
       }
-    ],
-    "location": "Localizados na <strong>Av. Praia de Belas, nº 1212 sala 424 — Porto Alegre, RS</strong> e na <strong>R. 55, nº 50 — Centro, Balneário Camboriú, SC</strong>, atendemos clientes de todo o Brasil com compromisso, transparência e resultados."
+    ]
   },
   "contact": {
     "eyebrow": "CONTATO",

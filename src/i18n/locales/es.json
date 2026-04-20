@@ -73,7 +73,7 @@
     "prev": "Anterior",
     "next": "Siguiente",
     "youtube": "Ver más en YouTube",
-    "bgText": "Consejos",
+    "bgText": "Consejos Legales",
     "captions": [
       "Planificación Previsional",
       "Subsidio por Enfermedad Denegado",
@@ -84,7 +84,7 @@
   },
   "about": {
     "eyebrow": "SOBRE NOSOTROS",
-    "bgText": "Nosotros",
+    "bgText": "Sobre Nosotros",
     "title1": "Especialización",
     "title2": "y empatía",
     "title3": "en cada caso",
