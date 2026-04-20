@@ -22,16 +22,21 @@ export default function AboutSection() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative overflow-hidden bg-cream py-16 sm:py-22 lg:py-32"
+      className="relative overflow-hidden bg-cream py-16 sm:py-42 lg:pt-56"
     >
       {/* Large background text */}
       <motion.div
         style={{ y: bgY }}
-        className="pointer-events-none absolute -left-8 top-1/3 -translate-y-1/2 select-none overflow-hidden max-w-full"
+        className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none flex flex-col items-center justify-center text-center 2xl:pt-30"
       >
-        <span className="font-serif text-[10rem] font-bold leading-none text-navy/[0.03] sm:text-[16rem] md:text-[20rem] lg:text-[26rem] xl:text-[30rem] 2xl:text-[38rem]">
-          {t('about.bgText')}
-        </span>
+        {t('about.bgText').split(' ').map((word, i) => (
+          <span
+            key={i}
+            className="block font-serif text-[10rem] font-bold leading-[0.85] text-navy/3 sm:text-[16rem] md:text-[20rem] xl:text-[30rem] 2xl:text-[36rem]"
+          >
+            {word}
+          </span>
+        ))}
       </motion.div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10 2xl:max-w-[1400px]">

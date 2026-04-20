@@ -140,11 +140,16 @@ export default function VideosSection() {
       {/* Parallax bg logo */}
       <motion.div
         style={{ y: bgY }}
-        className="pointer-events-none absolute right-0 top-1/3 -translate-y-1/2 select-none overflow-hidden max-w-full"
+        className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none flex flex-col items-center justify-center text-center xl:pt-30"
       >
-        <span className="font-serif text-[10rem] font-bold leading-none text-navy/[0.03] sm:text-[16rem] md:text-[20rem] lg:text-[26rem] xl:text-[30rem] 2xl:text-[38rem]">
-          {t('videos.bgText')}
-        </span>
+        {t('videos.bgText').split(' ').map((word, i) => (
+          <span
+            key={i}
+            className="block font-serif text-[10rem] font-bold leading-[0.85] text-navy/[0.03] sm:text-[16rem] md:text-[20rem] lg:text-[26rem] xl:text-[30rem] 2xl:text-[38rem]"
+          >
+            {word}
+          </span>
+        ))}
       </motion.div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 2xl:max-w-[1400px]">
