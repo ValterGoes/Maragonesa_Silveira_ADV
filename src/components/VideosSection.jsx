@@ -135,7 +135,7 @@ export default function VideosSection() {
     <section
       id="videos"
       ref={ref}
-      className="relative overflow-hidden bg-offwhite py-28 lg:py-36"
+      className="relative overflow-hidden bg-offwhite py-14 lg:py-18"
     >
       {/* Parallax bg logo */}
       <motion.div

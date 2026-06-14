@@ -16,10 +16,10 @@
     "headline2": "Previdenciária",
     "headline3": "que protege",
     "headline4": "seus direitos",
-    "subtitle": "Orientação especializada e atendimento humanizado. Simplificamos cada etapa e garantimos que seus direitos junto ao INSS sejam respeitados.",
-    "cta": "Consultar Especialista",
+    "subtitle": "Atuamos na concessão e revisão de aposentadorias, auxílios por incapacidade, pensões por morte, planejamento previdenciário e demandas tributárias correlatas. Simplificamos cada etapa e garantimos que seus direitos junto ao INSS sejam respeitados. ",
+    "cta": "Falar com Especialista",
     "explore": "Explorar serviços",
-    "badge": "ESPECIALISTA",
+    "badge": "ESPECIALISTAS",
     "badgeTitle": "Direito Previdenciário",
     "imgAlt": "Advocacia Previdenciária — Maragonesa Silveira",
     "whatsappMsg": "Olá! Gostaria de agendar uma consulta sobre meu benefício previdenciário."
@@ -88,7 +88,8 @@
     "title1": "Especialização",
     "title2": "& empatia",
     "title3": "em cada caso",
-    "description": "Somos especialistas em <strong>direito previdenciário junto ao INSS</strong>. Nossa equipe conhece profundamente as regras previdenciárias e luta incansavelmente pelos direitos dos nossos clientes. Acreditamos que a advocacia de excelência nasce quando o conhecimento técnico se encontra com a empatia genuína.",
+    "description": "Somos especialistas em <strong>direito previdenciário perante ao INSS</strong>.<br>Nossa equipe alia profundo conhecimento técnico à atenção individualizada de cada caso, oferecendo soluções seguras e personalizadas para proteger direitos e maximizar benefícios.<br>Porque cada história merece ser tratada com excelência, dedicação e respeito.",
+
     "imgAlt": "Maragonesa Silveira — Advogada Previdenciária em Porto Alegre",
     "cards": [
       {
@@ -107,7 +108,7 @@
   },
   "contact": {
     "eyebrow": "CONTATO",
-    "title1": "Fale com um",
+    "title1": "Fale com uma",
     "title2": "especialista",
     "whatsapp": "WhatsApp",
     "email": "E-mail",

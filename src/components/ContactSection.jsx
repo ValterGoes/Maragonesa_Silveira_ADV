@@ -10,8 +10,10 @@ import {
   Mail,
 } from "lucide-react";
 
-const WHATSAPP_BASE =
+const WHATSAPP_1 =
   "https://wa.me/5551996839890?text=";
+
+const WHATSAPP_2 = "https://wa.me/5513997741821?text=";
 
 const locations = {
   poa: {
@@ -52,7 +54,8 @@ export default function ContactSection() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const [activeLocation, setActiveLocation] = useState("poa");
 
-  const whatsappUrl = WHATSAPP_BASE + encodeURIComponent(t('hero.whatsappMsg'));
+  const whatsappUrl = WHATSAPP_1+ encodeURIComponent(t('hero.whatsappMsg'));
+  const whatsappUrl2 = WHATSAPP_2 + encodeURIComponent(t("hero.whatsappMsg"));
   const current = locations[activeLocation];
 
   useEffect(() => {
@@ -71,7 +74,10 @@ export default function ContactSection() {
       id="contact"
       className="relative overflow-hidden bg-cream py-10 sm:py-14 lg:py-16"
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 2xl:max-w-[1400px]" ref={ref}>
+      <div
+        className="mx-auto max-w-7xl px-6 lg:px-10 2xl:max-w-[1400px]"
+        ref={ref}
+      >
         <div className="grid gap-10 sm:gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-24">
           {/* Left — info */}
           <div>
@@ -83,7 +89,7 @@ export default function ContactSection() {
               <div className="h-px w-8 bg-burgundy" />
               <div className="h-px w-4 bg-gold" />
               <span className="text-[11px] font-semibold tracking-[0.3em] text-gold">
-                {t('contact.eyebrow')}
+                {t("contact.eyebrow")}
               </span>
             </motion.div>
 
@@ -93,9 +99,9 @@ export default function ContactSection() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="mb-10 font-sans text-3xl font-medium leading-[1.1] tracking-tight text-navy sm:text-4xl lg:text-5xl"
             >
-              {t('contact.title1')}
+              {t("contact.title1")}
               <br />
-              <span className="text-navy/30">{t('contact.title2')}</span>
+              <span className="text-navy/30">{t("contact.title2")}</span>
               <span className="text-burgundy">.</span>
             </motion.h2>
 
@@ -121,8 +127,43 @@ export default function ContactSection() {
                 </svg>
               </div>
               <div className="flex-1">
-                <p className="text-sm font-semibold text-navy">{t('contact.whatsapp')}</p>
+                <p className="text-sm font-semibold text-navy">
+                  {t("contact.whatsapp")}
+                </p>
                 <p className="text-sm text-gray-text">(51) 9683-9890</p>
+              </div>
+              <ArrowUpRight
+                size={16}
+                className="text-gray-text/30 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#25D366]"
+              />
+            </motion.a>
+
+            {/* WhatsApp card 2 */}
+            <motion.a
+              href={whatsappUrl2}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, x: -20 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: 0.3 }}
+              className="mt-3 group flex items-center gap-4 rounded-xl border border-gray-border bg-white p-4 transition-all duration-300 hover:border-[#25D366]/30 hover:shadow-[0_4px_20px_rgba(37,211,102,0.08)]"
+            >
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#25D366]/10 transition-colors duration-300 group-hover:bg-[#25D366]/20">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width={20}
+                  height={20}
+                  fill="#25D366"
+                >
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <p className="text-sm font-semibold text-navy">
+                  {t("contact.whatsapp")}
+                </p>
+                <p className="text-sm text-gray-text">(13) 99774-1821</p>
               </div>
               <ArrowUpRight
                 size={16}
@@ -142,9 +183,11 @@ export default function ContactSection() {
                 <Mail size={20} className="text-burgundy" />
               </div>
               <div className="flex-1">
-                <p className="text-sm font-semibold text-navy">{t('contact.email')}</p>
+                <p className="text-sm font-semibold text-navy">
+                  {t("contact.email")}
+                </p>
                 <p className="text-sm text-gray-text">
-                  maragonesa.adv@gmail.com
+                  contato@advogadosaet.com.br
                 </p>
               </div>
               <ArrowUpRight
@@ -175,7 +218,9 @@ export default function ContactSection() {
                 </svg>
               </div>
               <div className="flex-1">
-                <p className="text-sm font-semibold text-navy">{t('contact.instagram')}</p>
+                <p className="text-sm font-semibold text-navy">
+                  {t("contact.instagram")}
+                </p>
                 <p className="text-sm text-gray-text">@maragonesa</p>
               </div>
               <ArrowUpRight
@@ -200,21 +245,23 @@ export default function ContactSection() {
                     : "border border-transparent hover:bg-white/60"
                 }`}
               >
-                <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-colors duration-300 ${
-                  activeLocation === "poa"
-                    ? "border-burgundy/20 bg-burgundy/10"
-                    : "border-gray-border bg-white"
-                }`}>
+                <div
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-colors duration-300 ${
+                    activeLocation === "poa"
+                      ? "border-burgundy/20 bg-burgundy/10"
+                      : "border-gray-border bg-white"
+                  }`}
+                >
                   <MapPin size={16} className="text-burgundy" />
                 </div>
                 <div>
                   <p className="text-[11px] font-semibold tracking-wider text-navy/40">
-                    {t('contact.addressLabel')}
+                    {t("contact.addressLabel")}
                   </p>
                   <p className="text-sm font-medium text-navy">
-                    {t('contact.addressLine1')}
+                    {t("contact.addressLine1")}
                     <br />
-                    {t('contact.addressLine2')}
+                    {t("contact.addressLine2")}
                   </p>
                 </div>
               </button>
@@ -228,21 +275,23 @@ export default function ContactSection() {
                     : "border border-transparent hover:bg-white/60"
                 }`}
               >
-                <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-colors duration-300 ${
-                  activeLocation === "bc"
-                    ? "border-burgundy/20 bg-burgundy/10"
-                    : "border-gray-border bg-white"
-                }`}>
+                <div
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-colors duration-300 ${
+                    activeLocation === "bc"
+                      ? "border-burgundy/20 bg-burgundy/10"
+                      : "border-gray-border bg-white"
+                  }`}
+                >
                   <MapPin size={16} className="text-burgundy" />
                 </div>
                 <div>
                   <p className="text-[11px] font-semibold tracking-wider text-navy/40">
-                    {t('contact.address2Label')}
+                    {t("contact.address2Label")}
                   </p>
                   <p className="text-sm font-medium text-navy">
-                    {t('contact.address2Line1')}
+                    {t("contact.address2Line1")}
                     <br />
-                    {t('contact.address2Line2')}
+                    {t("contact.address2Line2")}
                   </p>
                 </div>
               </button>
@@ -253,24 +302,10 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-[11px] font-semibold tracking-wider text-navy/40">
-                    {t('contact.onlineLabel')}
+                    {t("contact.onlineLabel")}
                   </p>
                   <p className="text-sm font-medium text-navy">
-                    {t('contact.onlineText')}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-border bg-white">
-                  <Clock size={16} className="text-burgundy" />
-                </div>
-                <div>
-                  <p className="text-[11px] font-semibold tracking-wider text-navy/40">
-                    {t('contact.hoursLabel')}
-                  </p>
-                  <p className="text-sm font-medium text-navy">
-                    {t('contact.hoursText')}
+                    {t("contact.onlineText")}
                   </p>
                 </div>
               </div>
@@ -287,7 +322,7 @@ export default function ContactSection() {
             {/* Map */}
             <div className="relative flex-1 overflow-hidden rounded-2xl border border-gray-border shadow-[0_1px_3px_rgba(0,0,0,0.03)]">
               <iframe
-                title={t('contact.mapTitle')}
+                title={t("contact.mapTitle")}
                 src={current.mapSrc}
                 width="100%"
                 height="100%"
@@ -306,7 +341,7 @@ export default function ContactSection() {
               >
                 <Navigation size={14} className="text-burgundy" />
                 <span className="text-xs font-semibold text-navy">
-                  {t('contact.openMaps')}
+                  {t("contact.openMaps")}
                 </span>
                 <ArrowUpRight
                   size={12}

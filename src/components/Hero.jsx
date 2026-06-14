@@ -1,26 +1,27 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
-import { useTranslation } from 'react-i18next'
-import WhatsAppIcon from './WhatsAppIcon'
-import capa from '../assets/images/adv4.webp'
-import marcadagua from '../assets/images/marcadagua.png'
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { useTranslation } from "react-i18next";
+import WhatsAppIcon from "./WhatsAppIcon";
+import capa from "../assets/images/adv4.webp";
+import adv0 from "../assets/images/adv0.webp";
+import marcadagua from "../assets/images/marcadagua.png";
 
-const WHATSAPP_BASE = 'https://wa.me/5551996839890?text='
+const WHATSAPP_BASE = "https://wa.me/5551996839890?text=";
 
 export default function Hero() {
-  const { t } = useTranslation()
-  const ref = useRef(null)
+  const { t } = useTranslation();
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start start', 'end start'],
-  })
+    offset: ["start start", "end start"],
+  });
 
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, 150])
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, -80])
-  const imgY = useTransform(scrollYProgress, [0, 1], [0, 100])
-  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const imgY = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
-  const whatsappUrl = WHATSAPP_BASE + encodeURIComponent(t('hero.whatsappMsg'))
+  const whatsappUrl = WHATSAPP_BASE + encodeURIComponent(t("hero.whatsappMsg"));
 
   return (
     <section
@@ -41,17 +42,19 @@ export default function Hero() {
         />
       </motion.div>
 
-      {/* Accent lines */}
-      <div className="absolute left-6 top-0 h-full w-px bg-gradient-to-b from-transparent via-burgundy/30 to-transparent sm:left-10 lg:left-20" />
-      <div className="absolute left-8 top-0 h-full w-px bg-gradient-to-b from-transparent via-gold/15 to-transparent sm:left-12 lg:left-[5.5rem]" />
+      {/* Accent lines adaptadas para a nova margem esquerda */}
+      <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-transparent via-burgundy/30 to-transparent sm:left-6 lg:left-10" />
+      <div className="absolute left-6 top-0 h-full w-px bg-gradient-to-b from-transparent via-gold/15 to-transparent sm:left-8 lg:left-[3.5rem]" />
 
+      {/* Reduzido o padding horizontal (px-6) e aumentado o max-width para o texto ir mais para a esquerda */}
       <motion.div
         style={{ opacity }}
-        className="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-10 lg:py-40 2xl:max-w-[1400px]"
+        className="relative mx-auto w-full max-w-[1400px] px-6 py-24 sm:py-32 lg:px-6 lg:py-40 2xl:max-w-[1550px] 2xl:px-12"
       >
-        <div className="grid items-center gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
+        {/* Grid ajustado: 0.8fr para texto (mais estreito) e 1.2fr para imagens (mais largo) */}
+        <div className="grid items-center gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
           {/* Left — text */}
-          <div>
+          <div className="relative z-10">
             {/* Eyebrow */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -62,7 +65,7 @@ export default function Hero() {
               <div className="h-px w-8 bg-burgundy" />
               <div className="h-px w-4 bg-gold" />
               <span className="text-[11px] font-semibold tracking-[0.3em] text-gold">
-                {t('hero.eyebrow')}
+                {t("hero.eyebrow")}
               </span>
             </motion.div>
 
@@ -71,28 +74,29 @@ export default function Hero() {
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.3 }}
-              className="font-sans text-4xl font-medium leading-[0.95] tracking-tighter text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+              className="font-sans text-4xl font-medium leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4.5rem] 2xl:text-[5rem]"
             >
-              {t('hero.headline1')}
+              {t("hero.headline1")}
               <br />
-              <span className="text-gold">{t('hero.headline2')}</span>
+              <span className="text-gold">{t("hero.headline2")}</span>
               <br />
-              <span className="text-white/30">{t('hero.headline3')}</span>
+              <span className="text-white/30">{t("hero.headline3")}</span>
               <br />
-              {t('hero.headline4')}<span className="text-burgundy">.</span>
+              {t("hero.headline4")}
+              <span className="text-burgundy">.</span>
             </motion.h1>
 
             <motion.div
               style={{ y: y2 }}
-              className="mt-8 flex max-w-xl flex-col gap-6 sm:mt-12 sm:gap-8 lg:mt-16"
+              className="mt-8 flex max-w-xl flex-col gap-6 sm:mt-12 sm:gap-8 lg:mt-14"
             >
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.7 }}
-                className="max-w-sm text-sm leading-relaxed text-white/40 sm:max-w-md sm:text-base"
+                className="max-w-sm text-sm leading-relaxed text-white/50 sm:max-w-md sm:text-base"
               >
-                {t('hero.subtitle')}
+                {t("hero.subtitle")}
               </motion.p>
 
               <motion.div
@@ -105,49 +109,62 @@ export default function Hero() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-shimmer group inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-[14px] font-semibold text-white sm:px-8 sm:py-4 sm:text-[15px]"
+                  className="bg-whatsapp group inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3 text-[14px] font-semibold text-white sm:px-8 sm:py-4 sm:text-[15px]"
                 >
-                  <WhatsAppIcon size={16} />
-                  {t('hero.cta')}
+                  <WhatsAppIcon size={24} />
+                  {t("hero.cta")}
                 </a>
                 <a
                   href="#services"
-                  className="inline-flex items-center gap-2 px-4 py-3 text-[13px] font-medium text-white/40 transition-colors hover:text-white/80"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3 text-[13px] font-medium text-white/40 transition-colors hover:text-white/80"
                 >
                   <span className="h-px w-6 bg-white/20" />
-                  {t('hero.explore')}
+                  {t("hero.explore")}
                 </a>
               </motion.div>
             </motion.div>
           </div>
 
-          {/* Right — hero image */}
+          {/* Right — hero images composition */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
             style={{ y: imgY }}
-            className="relative hidden lg:block"
+            className="relative hidden h-full w-full lg:flex items-center justify-center gap-4 xl:gap-6"
           >
-            {/* Accent frame */}
-            <div className="absolute -inset-3 rounded-2xl bg-gradient-to-br from-burgundy/20 via-transparent to-gold/10" />
-            <div className="absolute -top-2 -left-2 h-16 w-px bg-burgundy/60" />
-            <div className="absolute -top-2 -left-2 h-px w-16 bg-burgundy/60" />
-            <div className="absolute -bottom-2 -right-2 h-16 w-px bg-gold/40" />
-            <div className="absolute -bottom-2 -right-2 h-px w-16 bg-gold/40" />
+            {/* Imagem Esquerda (Adv0) - Largura aumentada para w-[58%] para evitar o corte do braço */}
+            <div className="relative h-[450px] w-[42%] translate-y-8 xl:h-[580px] xl:translate-y-12">
+              <div className="absolute -top-3 -left-3 h-16 w-px bg-burgundy/60" />
+              <div className="absolute -top-3 -left-3 h-px w-16 bg-burgundy/60" />
 
-            <img
-              src={capa}
-              alt={t('hero.imgAlt')}
-              className="relative max-h-[550px] w-full rounded-2xl object-cover shadow-[0_20px_60px_rgba(0,0,0,0.5)] xl:max-h-[650px]"
-            />
+              <img
+                src={adv0}
+                alt="Advogada Associada"
+                className="h-full w-full rounded-2xl object-cover object-center shadow-[0_20px_60px_rgba(0,0,0,0.4)] transition-transform duration-700 hover:scale-[1.02]"
+              />
+            </div>
 
-            {/* Floating badge */}
-            <div className="absolute -bottom-4 -left-4 rounded-xl border border-white/10 bg-charcoal/90 px-5 py-3 backdrop-blur-lg">
-              <p className="text-[10px] font-semibold tracking-wider text-gold/70">
-                {t('hero.badge')}
-              </p>
-              <p className="text-sm font-bold text-white">{t('hero.badgeTitle')}</p>
+            {/* Imagem Direita (Capa) - Largura ajustada para w-[42%] para compensar o aumento da outra */}
+            <div className="relative h-[450px] w-[50%] -translate-y-8 xl:h-[580px] xl:-translate-y-12">
+              <div className="absolute -bottom-3 -right-3 h-16 w-px bg-gold/40" />
+              <div className="absolute -bottom-3 -right-3 h-px w-16 bg-gold/40" />
+
+              <img
+                src={capa}
+                alt="Advogada"
+                className="h-full w-full rounded-2xl object-cover object-top shadow-[0_20px_60px_rgba(0,0,0,0.4)] transition-transform duration-700 hover:scale-[1.02]"
+              />
+
+              {/* Floating badge */}
+              <div className="absolute right-4 z-20 rounded-xl border border-white/10 bg-charcoal/90 px-8 py-3 shadow-2xl backdrop-blur-md xl:left-2 xl:right-auto xl:-bottom-25">
+                <p className="text-[14px] font-semibold tracking-wider text-gold/70">
+                  {t("hero.badge")}
+                </p>
+                <p className="whitespace-nowrap text-sm font-bold text-white xl:text-xl">
+                  {t("hero.badgeTitle")}
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -157,7 +174,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="absolute bottom-6 left-6 right-6 sm:bottom-10 lg:left-10 lg:right-10"
+          className="absolute bottom-6 left-6 right-6 sm:bottom-10 lg:left-6 lg:right-6"
         >
           <div className="flex items-center gap-12 border-t border-white/[0.06] pt-6">
             {[].map((stat, i) => (
@@ -177,5 +194,5 @@ export default function Hero() {
         </motion.div>
       </motion.div>
     </section>
-  )
+  );
 }

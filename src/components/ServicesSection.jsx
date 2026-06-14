@@ -77,7 +77,7 @@ export default function ServicesSection() {
     <section
       id="services"
       ref={sectionRef}
-      className="grain relative overflow-hidden bg-charcoal py-20 sm:py-28 lg:py-44"
+      className="grain relative overflow-hidden bg-charcoal py-10 sm:py-18 lg:py-22"
     >
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10 2xl:max-w-[1400px]">
         {/* Parallax bg logo — centered behind cards */}

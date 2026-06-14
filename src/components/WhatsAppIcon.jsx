@@ -1,4 +1,4 @@
-export default function WhatsAppIcon({ size = 16, className = '' }) {
+export default function WhatsAppIcon({ size = 22, className = '' }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
