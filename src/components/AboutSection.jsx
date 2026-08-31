@@ -111,7 +111,9 @@ export default function AboutSection() {
                 {t("about.lawyer1Name", "Maragonesa da Silveira")}
               </p>
               <p className="text-[11px] font-semibold tracking-wider text-gold uppercase mt-0.5 whitespace-nowrap">
-                {t("about.lawyer1Oab", "ADVOGADA - OAB/RS 124.645")}
+                {t(
+                  "about.pronome1"
+                )}
               </p>
             </div>
           </motion.div>
@@ -139,7 +141,9 @@ export default function AboutSection() {
                 {t("about.lawyer2Name", "Luciana Seixas Alves Teixeira")}
               </p>
               <p className="text-[11px] font-semibold tracking-wider text-gold uppercase mt-0.5 whitespace-nowrap">
-                {t("about.lawyer2Oab", "ADVOGADA - OAB/SP 494.240")}
+                {t(
+                  "about.pronome2"
+                )}
               </p>
             </div>
           </motion.div>

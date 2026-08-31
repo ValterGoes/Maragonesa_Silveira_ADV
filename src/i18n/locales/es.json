@@ -16,8 +16,8 @@
     "headline2": "Previsional",
     "headline3": "que protege",
     "headline4": "sus derechos",
-    "subtitle": "Asesoramiento especializado y atención personalizada. Simplificamos cada etapa y garantizamos que sus derechos ante la seguridad social sean respetados.",
-    "cta": "Consultar Especialista",
+    "subtitle": "Le negaron el subsidio por enfermedad, se retrasó su jubilación o sufrió una reducción de capacidad debido a un accidente? Nos encargamos de toda la burocracia y combatimos los errores del INSS por usted. Atención humanizada y especializada para garantizar sus derechos sin necesidad de salir de casa.",
+    "cta": "Hablar con un Especialista",
     "explore": "Explorar servicios",
     "badge": "ESPECIALISTAS",
     "badgeTitle": "Derecho Previsional",
@@ -90,27 +90,22 @@
     "title3": "en cada caso",
     "description": "Somos especialistas en <strong>derecho previsional ante el INSS</strong>. Nos especializamos en la concesión y revisión de beneficios de la seguridad social, incluyendo pensiones de jubilación, pensiones de sobreviviente, prestaciones por discapacidad, planificación de la jubilación y asuntos fiscales relacionados.<br>Nuestro equipo combina un profundo conocimiento técnico con una atención personalizada a cada caso, ofreciendo soluciones seguras y adaptadas a cada cliente para proteger sus derechos y maximizar sus beneficios.<br>Porque cada historia merece ser tratada con excelencia, dedicación y respeto.",
     "imgAlt": "Maragonesa Silveira — Abogada Previsional en Porto Alegre",
-    "cards": [
-      {
-        "label": "Atención Nacional",
-        "sub": "Presencial en Porto Alegre y Balneário Camboriú o 100% en línea para todo Brasil."
-      },
-      {
-        "label": "Atención Personalizada",
-        "sub": "Cada caso es único. Estrategias a medida centradas en usted."
-      },
-      {
-        "label": "Procesos Electrónicos",
-        "sub": "Resuelva todo con comodidad y seguridad, sin salir de su hogar."
-      }
-    ],
-    "location": "Ubicados en la <strong>Av. Praia de Belas, 1212, oficina 424 — Porto Alegre, RS</strong> y en la <strong>R. 55, 50 — Centro, Balneário Camboriú, SC, Brasil</strong>, atendemos clientes en todo el país con compromiso, transparencia y resultados."
+    "pronome1": "Abogada - OAB/RS 123.645",
+    "pronome2": "Abogada - OAB/SP 494.240"
+  },
+  "reviews": {
+    "eyebrow": "TESTIMONIOS",
+    "title1": "Lo que dicen",
+    "title2": "nuestros clientes",
+    "subtitle": "La satisfacción de nuestros clientes es nuestra mayor recompensa. Vea algunos testimonios de personas que lograron garantizar sus derechos previsionales con nuestra ayuda.",
+    "bgText": "Testimonios"
   },
   "contact": {
     "eyebrow": "CONTACTO",
     "title1": "Hable con un",
     "title2": "especialista",
-    "whatsapp": "WhatsApp",
+    "whatsapp1": "Abogada Maragonesa Silveira",
+    "whatsapp2": "Abogada Luciana Alves",
     "email": "Correo electrónico",
     "instagram": "Instagram",
     "addressLabel": "PORTO ALEGRE",

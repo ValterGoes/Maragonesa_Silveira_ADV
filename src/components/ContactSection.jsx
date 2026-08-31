@@ -128,7 +128,7 @@ export default function ContactSection() {
               </div>
               <div className="flex-1">
                 <p className="text-sm font-semibold text-navy">
-                  {t("contact.whatsapp")}
+                  {t("contact.whatsapp1")}
                 </p>
                 <p className="text-sm text-gray-text">(51) 9683-9890</p>
               </div>
@@ -161,7 +161,7 @@ export default function ContactSection() {
               </div>
               <div className="flex-1">
                 <p className="text-sm font-semibold text-navy">
-                  {t("contact.whatsapp")}
+                  {t("contact.whatsapp2")}
                 </p>
                 <p className="text-sm text-gray-text">(13) 99774-1821</p>
               </div>

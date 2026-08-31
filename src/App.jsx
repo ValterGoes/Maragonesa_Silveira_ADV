@@ -4,9 +4,11 @@ import Hero from './components/Hero'
 import VideosSection from './components/VideosSection'
 import ServicesSection from './components/ServicesSection'
 import AboutSection from './components/AboutSection'
+import GoogleReviews from './components/GoogleReviews'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
+
 
 export default function App() {
   useEffect(() => {
@@ -32,6 +34,7 @@ export default function App() {
         <VideosSection />
         <ServicesSection />
         <AboutSection />
+        <GoogleReviews />
         <ContactSection />
       </main>
       <Footer />

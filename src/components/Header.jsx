@@ -121,7 +121,7 @@ export default function Header() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-shimmer mt-3 inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3 text-sm font-semibold text-white"
+                className="bg-whatsapp to-whatsapp-hover mt-3 inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3 text-sm font-semibold text-white"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

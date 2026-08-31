@@ -16,7 +16,7 @@
     "headline2": "Law Firm",
     "headline3": "protecting",
     "headline4": "your rights",
-    "subtitle": "Expert guidance and personalized support. We simplify every step and ensure your social security rights are fully upheld.",
+    "subtitle": "Did you have your sickness benefit denied, your retirement delayed, or did you suffer a reduction in capacity due to an accident? We handle all the bureaucracy and fight INSS errors for you. Humanized and specialized service to guarantee your rights without having to leave your home.",
     "cta": "talk to the lawyer",
     "explore": "Explore services",
     "badge": "SPECIALISTS",
@@ -90,27 +90,22 @@
     "title3": "in every case",
     "description": "We are specialists in <strong>social security law and INSS proceedings</strong>. We are involved in the granting and review of social security benefits, including pensions, death pensions, disability benefits, pension planning and related tax claims.<br>Our team combines deep technical knowledge with individual attention to each case, offering safe and personalized solutions to protect rights and maximize benefits.<br>Because every story deserves to be treated with excellence, dedication and respect.",
     "imgAlt": "Maragonesa Silveira — Social Security Lawyer in Porto Alegre",
-    "cards": [
-      {
-        "label": "Nationwide Service",
-        "sub": "In-person in Porto Alegre and Balneário Camboriú or 100% online across Brazil."
-      },
-      {
-        "label": "Personalized Attention",
-        "sub": "Every case is unique. Tailored strategies focused on you."
-      },
-      {
-        "label": "Digital Processes",
-        "sub": "Resolve everything conveniently and securely from the comfort of your home."
-      }
-    ],
-    "location": "Located at <strong>Av. Praia de Belas, 1212, Suite 424 — Porto Alegre, RS</strong> and <strong>R. 55, 50 — Centro, Balneário Camboriú, SC, Brazil</strong>, we serve clients across the country with commitment, transparency, and results."
+    "pronome1": "Attorney - OAB/RS 12345",
+    "pronome2": "Attorney - OAB/SP 494240"
+  },
+  "reviews": {
+    "eyebrow": "TESTIMONIALS",
+    "title1": "What our",
+    "title2": "clients say",
+    "subtitle": "Our clients' satisfaction is our greatest reward. Check out some testimonials from people who had their social security rights guaranteed with our help.",
+    "bgText": "Testimonials"
   },
   "contact": {
     "eyebrow": "CONTACT",
     "title1": "Talk to a",
     "title2": "specialist",
-    "whatsapp": "WhatsApp",
+    "whatsapp1": "Attorney Maragonesa Silveira",
+    "whatsapp2": "Attorney Luciana Alves",
     "email": "Email",
     "instagram": "Instagram",
     "addressLabel": "PORTO ALEGRE",

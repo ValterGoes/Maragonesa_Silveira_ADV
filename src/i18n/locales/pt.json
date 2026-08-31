@@ -16,7 +16,7 @@
     "headline2": "Previdenciária",
     "headline3": "que protege",
     "headline4": "seus direitos",
-    "subtitle": "Atuamos na concessão e revisão de aposentadorias, auxílios por incapacidade, pensões por morte, planejamento previdenciário e demandas tributárias correlatas. Simplificamos cada etapa e garantimos que seus direitos junto ao INSS sejam respeitados. ",
+    "subtitle": "Teve o auxílio-doença negado, a aposentadoria travada ou sofreu redução na capacidade por acidente? Nós cuidamos de toda a burocracia e combatemos os erros do INSS para você. Atendimento humanizado e especializado para garantir o seu direito sem precisar sair de casa.",
     "cta": "Falar com Especialista",
     "explore": "Explorar serviços",
     "badge": "ESPECIALISTAS",
@@ -41,7 +41,7 @@
       {
         "title": "Auxílio-Acidente",
         "description": "Benefício pago ao segurado que sofreu um acidente e ficou com sequelas que reduzem sua capacidade de trabalho."
-      },
+      }, 
       {
         "title": "Isenção do IR",
         "description": "Isenção de imposto de renda por doenças graves, como neoplasia maligna, cardiopatia grave, alienação mental e outros."
@@ -91,26 +91,24 @@
     "description": "Somos especialistas em <strong>direito previdenciário perante ao INSS</strong>.<br>Nossa equipe alia profundo conhecimento técnico à atenção individualizada de cada caso, oferecendo soluções seguras e personalizadas para proteger direitos e maximizar benefícios.<br>Porque cada história merece ser tratada com excelência, dedicação e respeito.",
 
     "imgAlt": "Maragonesa Silveira — Advogada Previdenciária em Porto Alegre",
-    "cards": [
-      {
-        "label": "Atendimento Nacional",
-        "sub": "Presencial em Porto Alegre e Balneário Camboriú ou 100% online para todo o Brasil."
-      },
-      {
-        "label": "Atendimento Personalizado",
-        "sub": "Cada caso é único. Estratégias sob medida focadas em você."
-      },
-      {
-        "label": "Processos Eletrônicos",
-        "sub": "Resolva tudo com praticidade e segurança, sem sair de casa."
-      }
-    ]
+    "pronome1": "Advogada - OAB/RS 123.645",
+    "pronome2": "Advogada - OAB/SP 494.240"
+  },
+  "reviews": {
+    "eyebrow": "DEPOIMENTOS",
+    "title1": "O que nossos",
+    "title2": "clientes dizem",
+    "subtitle": "A satisfação de nossos clientes é a nossa maior recompensa.",
+    "subtitle2": "Veja alguns depoimentos de pessoas que conseguiram garantir seus direitos previdenciários com a nossa ajuda.",
+    "bgText": "Depoimentos"
+    
   },
   "contact": {
     "eyebrow": "CONTATO",
     "title1": "Fale com uma",
     "title2": "especialista",
-    "whatsapp": "WhatsApp",
+    "whatsapp1": "Dra. Maragonesa Silveira",
+    "whatsapp2": "Dra. Luciana Alves",
     "email": "E-mail",
     "instagram": "Instagram",
     "addressLabel": "PORTO ALEGRE",
