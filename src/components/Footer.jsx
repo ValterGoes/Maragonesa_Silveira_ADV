@@ -35,7 +35,7 @@ export default function Footer() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-whatsapp group inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-sm font-semibold text-white sm:px-8 sm:py-4"
+            className="cta-whatsapp bg-whatsapp group inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-sm font-semibold text-white sm:px-8 sm:py-4"
           >
             <WhatsAppIcon size={20} />
             {t('footer.ctaButton')}
