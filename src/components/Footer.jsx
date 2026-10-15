@@ -93,6 +93,10 @@ export default function Footer() {
             &copy; {year} {t('footer.copyright')}
           </p>
 
+          <p className="text-[11px] text-white/35 font-sans">
+            Provérbios 16:3
+          </p>
+
           <a
             href="https://valtergoes.netlify.app/"
             target="_blank"
