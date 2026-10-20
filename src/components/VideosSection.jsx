@@ -3,23 +3,58 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { Play, ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-// CHANNEL_ID = "UCFerEojNj5BQK9mpwDHxzCQ"
+// 🟢 VÍDEOS DE FALLBACK (Garantia de exibição se a requisição falhar)
+const DEFAULT_VIDEOS = [
+  {
+    id: "6HfAJsTnrZo",
+    title: "Sofreu um acidente? Saiba se você tem direito ao auxílio-acidente.",
+    thumb: "https://img.youtube.com/vi/6HfAJsTnrZo/maxresdefault.jpg",
+    fallbackThumb: "https://img.youtube.com/vi/6HfAJsTnrZo/hqdefault.jpg",
+  },
+  {
+    id: "BpfgHP6Zf8s",
+    title:
+      "Preciso estar afastado do trabalho para receber o auxílio-acidente?",
+    thumb: "https://img.youtube.com/vi/BpfgHP6Zf8s/maxresdefault.jpg",
+    fallbackThumb: "https://img.youtube.com/vi/BpfgHP6Zf8s/hqdefault.jpg",
+  },
+  {
+    id: "M7Pp0rcRMXo",
+    title: "Amputação de dedo ou perda de movimento dão direito ao benefício?",
+    thumb: "https://img.youtube.com/vi/M7Pp0rcRMXo/maxresdefault.jpg",
+    fallbackThumb: "https://img.youtube.com/vi/M7Pp0rcRMXo/hqdefault.jpg",
+  },
+  {
+    id: "93yJS05ofQQ",
+    title: "Posso pedir auxílio-acidente depois de muitos anos do ocorrido?",
+    thumb: "https://img.youtube.com/vi/93yJS05ofQQ/maxresdefault.jpg",
+    fallbackThumb: "https://img.youtube.com/vi/93yJS05ofQQ/hqdefault.jpg",
+  },
+];
 
-function LazyVideo({ id, title, thumb, fallbackThumb, index, inView, playLabel }) {
-  const [playing, setPlaying] = useState(false)
-  const handlePlay = useCallback(() => setPlaying(true), [])
+function LazyVideo({
+  id,
+  title,
+  thumb,
+  fallbackThumb,
+  index,
+  inView,
+  playLabel,
+}) {
+  const [playing, setPlaying] = useState(false);
+  const handlePlay = useCallback(() => setPlaying(true), []);
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-      className="group relative flex-none w-[65vw] snap-center overflow-hidden rounded-2xl border border-gray-border bg-white shadow-none transition-all duration-300 hover:border-gold/20 sm:w-[220px] sm:hover:shadow-[0_8px_30px_rgba(197,160,89,0.08)] lg:w-[180px] xl:w-[200px] 2xl:w-[220px]"
+      className="group relative flex-none w-[80vw] snap-center overflow-hidden rounded-2xl border border-gray-border bg-white shadow-none transition-all duration-300 hover:border-gold/20 sm:w-[280px] sm:hover:shadow-[0_8px_30px_rgba(197,160,89,0.08)] lg:w-[220px] xl:w-[240px]"
     >
       <div className="relative aspect-[9/16] bg-black overflow-hidden rounded-t-2xl">
         {playing ? (
           <iframe
-            src={`https://www.youtube.com/embed/${id}?autoplay=1`}
+            src={`https://www.youtube.com/embed/${id}?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=0`}
             title={title}
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -36,7 +71,6 @@ function LazyVideo({ id, title, thumb, fallbackThumb, index, inView, playLabel }
               src={thumb}
               alt={title}
               loading="lazy"
-              // 👇 Função mágica: Se a capa HD der erro (404), ele usa a capa padrão!
               onError={(e) => {
                 if (e.target.src !== fallbackThumb) {
                   e.target.src = fallbackThumb;
@@ -46,27 +80,30 @@ function LazyVideo({ id, title, thumb, fallbackThumb, index, inView, playLabel }
             />
             <div className="absolute inset-0 bg-black/10 transition-colors duration-300 group-hover/btn:bg-black/20" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/40 opacity-70" />
-            
+
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="flex h-8 w-12 sm:h-11 sm:w-16 items-center justify-center rounded-xl bg-[#ff0000] text-white shadow-[0_4px_15px_rgba(255,0,0,0.4)] transition-transform duration-300 group-hover/btn:scale-110">
-                <Play size={20} className="fill-current ml-1" />
+              <div className="flex h-12 w-18 sm:h-11 sm:w-16 items-center justify-center rounded-xl bg-[#ff0000] text-white shadow-[0_4px_15px_rgba(255,0,0,0.4)] transition-transform duration-300 group-hover/btn:scale-110">
+                <Play size={28} className="fill-current ml-1" />
               </div>
             </div>
-            
+
             <div className="absolute bottom-2 right-2 flex items-center gap-1 rounded bg-black/80 px-2 py-1 text-[10px] font-semibold text-white backdrop-blur-md">
               Shorts
             </div>
           </button>
         )}
       </div>
-      
+
       <div className="px-3 py-4">
-        <p className="text-[13px] leading-tight font-semibold text-navy line-clamp-2" title={title}>
+        <p
+          className="text-[13px] leading-tight font-semibold text-navy line-clamp-2"
+          title={title}
+        >
           {title}
         </p>
       </div>
     </motion.div>
-  )
+  );
 }
 
 export default function VideosSection() {
@@ -75,7 +112,7 @@ export default function VideosSection() {
   const carouselRef = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
-  const [videos, setVideos] = useState([]); // 👈 Estado que guarda os vídeos automáticos
+  const [videos, setVideos] = useState(DEFAULT_VIDEOS);
   const [isLoading, setIsLoading] = useState(true);
 
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -87,66 +124,69 @@ export default function VideosSection() {
   });
   const bgY = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
-
-  // 🔴 BUSCA AUTOMÁTICA DOS VÍDEOS NO YOUTUBE (CORRIGIDA)
   useEffect(() => {
     const fetchYouTubeVideos = async () => {
       try {
         const CHANNEL_ID = "UCFerEojNj5BQK9mpwDHxzCQ";
-
-        // 👇 1. VÍDEOS FIXADOS: 
         const PINNED_VIDEOS = [
           "6HfAJsTnrZo",
           "BpfgHP6Zf8s",
           "M7Pp0rcRMXo",
-          "93yJS05ofQQ"
-        ]; 
-
-        // 👇 2. VÍDEOS BLOQUEADOS 
+          "93yJS05ofQQ",
+        ];
         const BLOCKED_VIDEOS = ["CoRkdPrZV28", "XJcIyhw6txk", "jJiHMTwG-w0"];
 
         const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
-        const apiEndpoint = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+        const apiEndpoint = `https://www.toptal.com/developers/feed2json/convert?url=${encodeURIComponent(rssUrl)}`;
 
         const response = await fetch(apiEndpoint);
+        if (!response.ok) throw new Error("Falha na requisição da API");
+
         const data = await response.json();
 
-        if (data.status === "ok") {
-          const allVideos = data.items.map((item) => {
-            const videoId = item.guid
-              ? item.guid.split(":")[2]
-              : item.link.split("v=")[1].split("&")[0];
-            return {
-              id: videoId,
-              title: item.title,
-              thumb: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
-              fallbackThumb: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
-            };
-          });
+        if (data && data.items && data.items.length > 0) {
+          const allVideos = data.items
+            .map((item) => {
+              let videoId = "";
+              if (item.id) {
+                const parts = item.id.split(":");
+                videoId = parts[parts.length - 1];
+              } else if (item.url) {
+                videoId = item.url.split("v=")[1]?.split("&")[0];
+              }
+
+              return {
+                id: videoId,
+                title: item.title,
+                thumb: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+                fallbackThumb: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+              };
+            })
+            .filter((v) => v.id);
 
           const filteredVideos = allVideos.filter(
             (v) => !BLOCKED_VIDEOS.includes(v.id),
           );
 
-          // 👇 3. LÓGICA DE ORDENAÇÃO (Coloca os fixados primeiro)
           filteredVideos.sort((a, b) => {
             const indexA = PINNED_VIDEOS.indexOf(a.id);
             const indexB = PINNED_VIDEOS.indexOf(b.id);
 
-            // Se ambos estão nos fixados, respeita a ordem da lista PINNED_VIDEOS
             if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-            // Se só o A está nos fixados, ele vai para o começo
             if (indexA !== -1) return -1;
-            // Se só o B está nos fixados, ele vai para o começo
             if (indexB !== -1) return 1;
-            // Se nenhum dos dois está fixado, mantém a ordem cronológica do YouTube
             return 0;
           });
 
-          setVideos(filteredVideos.slice(0, 6)); // Pega os 6 primeiros
+          if (filteredVideos.length > 0) {
+            setVideos(filteredVideos.slice(0, 6));
+          }
         }
       } catch (error) {
-        console.error("Erro ao carregar vídeos do YouTube:", error);
+        console.warn(
+          "API indisponível. Utilizando lista de vídeos de fallback:",
+          error,
+        );
       } finally {
         setIsLoading(false);
       }
@@ -172,7 +212,7 @@ export default function VideosSection() {
       el.removeEventListener("scroll", checkScroll);
       window.removeEventListener("resize", checkScroll);
     };
-  }, [checkScroll, videos]); // Atualiza o scroll quando os vídeos carregam
+  }, [checkScroll, videos]);
 
   const scroll = (dir) => {
     const el = carouselRef.current;
@@ -186,7 +226,6 @@ export default function VideosSection() {
     });
   };
 
-  // Drag to scroll
   const isDragging = useRef(false);
   const startX = useRef(0);
   const scrollStart = useRef(0);
@@ -304,7 +343,6 @@ export default function VideosSection() {
             className={`pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-offwhite to-transparent transition-opacity duration-300 lg:hidden ${canScrollRight ? "opacity-100" : "opacity-0"}`}
           />
 
-          {/* Loader se estiver buscando os vídeos */}
           {isLoading ? (
             <div className="flex justify-center py-10">
               <div className="h-8 w-8 animate-spin rounded-full border-4 border-gold border-t-transparent"></div>
@@ -323,8 +361,9 @@ export default function VideosSection() {
                 <LazyVideo
                   key={video.id}
                   id={video.id}
-                  title={video.title} 
+                  title={video.title}
                   thumb={video.thumb}
+                  fallbackThumb={video.fallbackThumb}
                   index={index}
                   inView={inView}
                   playLabel={t("videos.play")}
