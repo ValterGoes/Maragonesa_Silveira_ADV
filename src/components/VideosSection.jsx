@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 
 // CHANNEL_ID = "UCFerEojNj5BQK9mpwDHxzCQ"
 
-
 function LazyVideo({ id, title, thumb, fallbackThumb, index, inView, playLabel }) {
   const [playing, setPlaying] = useState(false)
   const handlePlay = useCallback(() => setPlaying(true), [])
