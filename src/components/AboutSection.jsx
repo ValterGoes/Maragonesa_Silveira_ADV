@@ -22,7 +22,7 @@ export default function AboutSection() {
       ref={sectionRef}
       className="relative overflow-hidden bg-cream py-20 sm:py-32 lg:py-20"
     >
-      {/* Large background text */}
+      {/* texto de fundo da seção */}
       <motion.div
         style={{ y: bgY }}
         className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none flex flex-col items-center justify-center text-center 2xl:pt-30"
@@ -32,7 +32,7 @@ export default function AboutSection() {
           .map((word, i) => (
             <span
               key={i}
-              className="block font-serif text-[10rem] font-bold leading-[0.85] text-navy/3 sm:text-[16rem] md:text-[20rem] xl:text-[26rem] 2xl:text-[32rem]"
+              className="block font-serif text-[10rem] font-bold leading-[0.85] text-navy/[0.02] sm:text-[16rem] md:text-[20rem] xl:text-[26rem] 2xl:text-[32rem]"
             >
               {word}
             </span>
@@ -49,8 +49,8 @@ export default function AboutSection() {
             transition={{ duration: 0.7 }}
             className="mb-6 flex items-center gap-4"
           >
+            <div className="h-px w-12 bg-gold" />
             <div className="h-px w-8 bg-burgundy" />
-            <div className="h-px w-4 bg-gold" />
             <span className="text-[11px] font-semibold tracking-[0.3em] text-gold">
               {t("about.eyebrow")}
             </span>
@@ -87,18 +87,21 @@ export default function AboutSection() {
 
         {/* ================= BLOCO INFERIOR: IMAGENS LADO A LADO (CENTRALIZADAS) ================= */}
         {/* Adicionado justify-items-center para alinhar os eixos das colunas */}
-        <div className="grid gap-12 sm:gap-16 grid-cols-1 lg:grid-cols-2 lg:gap-10 xl:gap-16 justify-items-center">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-2 lg:gap-10 xl:gap-16 justify-items-center">
           {/* Imagem 1 — Maragonesa da Silveira */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative h-[450px] sm:h-[500px] lg:h-[530px] xl:h-[550px] w-full max-w-[450px] mx-auto"
+            initial={{ opacity: 0, x: -80, y: 20, scale: 0.96 }}
+            animate={inView ? { opacity: 1, x: 0, y: 0, scale: 1 } : { opacity: 0, x: -80, y: 20, scale: 0.96 }}
+            transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="relative mx-auto h-[220px] w-full max-w-[170px] sm:h-[280px] sm:max-w-[220px] lg:h-[530px] lg:max-w-[450px] xl:h-[550px]"
           >
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-burgundy/15 via-transparent to-gold/10" />
-            <img
+            <motion.img
               src={advImg}
               alt={t("about.imgAlt")}
+              initial={{ opacity: 0, x: -40, scale: 1.05 }}
+              animate={inView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: -40, scale: 1.05 }}
+              transition={{ duration: 0.9, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
               className="relative h-full w-full rounded-2xl object-cover object-top shadow-[0_16px_40px_rgba(0,0,0,0.12)] transition-transform duration-700 hover:scale-[1.01]"
             />
             {/* Detalhe linear superior esquerdo */}
@@ -106,11 +109,11 @@ export default function AboutSection() {
             <div className="absolute -top-3 -left-3 h-px w-12 bg-burgundy/50" />
 
             {/* Badge de Identificação */}
-            <div className="absolute -bottom-4 left-6 z-20 rounded-xl border border-navy/5 bg-cream/95 px-5 py-3 shadow-md shadow-navy/5 backdrop-blur-md sm:left-8">
-              <p className="font-sans text-base font-bold text-navy whitespace-nowrap">
+            <div className="absolute -bottom-3 left-1.5 z-20 rounded-lg border border-navy/5 bg-cream/95 px-2.5 py-1.5 shadow-md shadow-navy/5 backdrop-blur-md sm:-bottom-4 sm:left-6 sm:px-5 sm:py-3 lg:left-6">
+              <p className="font-sans text-[10px] font-bold text-navy whitespace-nowrap sm:text-base">
                 {t("about.lawyer1Name", "Maragonesa da Silveira")}
               </p>
-              <p className="text-[11px] font-semibold tracking-wider text-gold uppercase mt-0.5 whitespace-nowrap">
+              <p className="mt-0.5 text-[8px] font-semibold tracking-wider text-gold uppercase whitespace-nowrap sm:text-[11px]">
                 {t(
                   "about.pronome1"
                 )}
@@ -120,27 +123,30 @@ export default function AboutSection() {
 
           {/* Imagem 2 — Luciana Seixas Alves Teixeira */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="relative h-[450px] sm:h-[500px] lg:h-[530px] xl:h-[550px] w-full max-w-[450px] mx-auto"
+            initial={{ opacity: 0, x: 80, y: 20, scale: 0.96 }}
+            animate={inView ? { opacity: 1, x: 0, y: 0, scale: 1 } : { opacity: 0, x: 80, y: 20, scale: 0.96 }}
+            transition={{ duration: 0.9, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="relative mx-auto h-[220px] w-full max-w-[170px] sm:h-[280px] sm:max-w-[220px] lg:h-[530px] lg:max-w-[450px] xl:h-[550px]"
           >
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-gold/10 via-transparent to-burgundy/15" />
-            <img
+            <motion.img
               src={adv2}
               alt="Advogada Associada"
+              initial={{ opacity: 0, x: 40, scale: 1.05 }}
+              animate={inView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: 40, scale: 1.05 }}
+              transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
               className="relative h-full w-full rounded-2xl object-cover object-top shadow-[0_16px_40px_rgba(0,0,0,0.12)] transition-transform duration-700 hover:scale-[1.01]"
             />
             {/* Detalhe linear inferior direito */}
-            <div className="absolute -bottom-3 -right-3 h-12 w-px bg-gold/50" />
-            <div className="absolute -bottom-3 -right-3 h-px w-12 bg-gold/50" />
+            <div className="absolute -bottom-6 -right-3 h-12 w-px bg-gold/50" />
+            <div className="absolute -bottom-6 -right-3 h-px w-12 bg-gold/50" />
 
             {/* Badge de Identificação */}
-            <div className="absolute -bottom-4 right-6 z-20 rounded-xl border border-navy/5 bg-cream/95 px-5 py-3 shadow-md shadow-navy/5 backdrop-blur-md sm:right-8">
-              <p className="font-sans text-base font-bold text-navy whitespace-nowrap">
+            <div className="absolute -bottom-3 right-0 z-20 rounded-lg border border-navy/5 bg-cream/95 px-2 py-1.5 shadow-md shadow-navy/5 backdrop-blur-md sm:-bottom-4 sm:right-6 sm:px-5 sm:py-3 lg:right-6">
+              <p className="font-sans text-[10px] font-bold text-navy whitespace-nowrap sm:text-base">
                 {t("about.lawyer2Name", "Luciana Seixas Alves Teixeira")}
               </p>
-              <p className="text-[11px] font-semibold tracking-wider text-gold uppercase mt-0.5 whitespace-nowrap">
+              <p className="mt-0.5 text-[8px] font-semibold tracking-wider text-gold uppercase whitespace-nowrap sm:text-[11px]">
                 {t(
                   "about.pronome2"
                 )}

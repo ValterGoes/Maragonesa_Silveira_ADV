@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import logoAzul from '../assets/images/logo_azul.png'
+import logoBranco from '../assets/images/logo_branco.png'
 import LanguageSelector from './LanguageSelector'
 
 const WHATSAPP_BASE = 'https://wa.me/5551996839890?text='
@@ -31,22 +31,22 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-charcoal/70 shadow-[0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-2xl"
-          : "bg-transparent"
+          ? "bg-navy shadow-[0_1px_0_rgba(32,43,77,0.08)] "
+          : "bg-navy"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10 2xl:max-w-[1400px]">
         <a href="#hero" className="group flex items-center gap-3">
           <img
-            src={logoAzul}
+            src={logoBranco}
             alt="Logo Maragonesa Silveira Advocacia Previdenciária"
-            className="h-8 w-auto brightness-0 invert opacity-90 transition-opacity group-hover:opacity-100 sm:h-10"
+            className="h-9 w-auto opacity-100 transition-opacity group-hover:opacity-90 sm:h-10"
           />
           <div>
-            <p className="font-serif text-[14px] font-medium leading-tight tracking-tight text-white/90 sm:text-[16px]">
+            <p className="font-serif text-[18px] font-medium leading-tight tracking-tight text-white/100 sm:text-[18px]">
               Maragonesa <span>Silveira</span>
             </p>
-            <p className="text-[7px] font-medium uppercase tracking-[0.2em] text-white/30 sm:text-[8px]">
+            <p className="text-[8.5px] font-medium uppercase tracking-[0.2em] text-white/100 sm:text-[9px]">
               {t("header.brand")}
             </p>
           </div>
@@ -57,7 +57,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[13px] font-medium tracking-wide text-white/60 transition-colors hover:text-white"
+              className="text-[13px] font-medium tracking-wide text-white/75 transition-colors hover:text-white"
             >
               {link.label}
             </a>
@@ -85,11 +85,10 @@ export default function Header() {
           </a>
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
-          <LanguageSelector />
+        <div className="flex items-center md:hidden">
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/80 transition-all duration-200 hover:border-white/20 hover:bg-white/10"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/100 bg-navy/10 text-white/100 transition-all duration-200 hover:border-white/100 hover:bg-white"
             aria-label="Menu"
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -104,15 +103,18 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="border-t border-white/5 bg-charcoal/95 backdrop-blur-2xl md:hidden"
+            className="border-t border-navy/10 bg-navy/10 backdrop-blur-2xl md:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-6">
+              <div className="mb-2 flex justify-end">
+                <LanguageSelector />
+              </div>
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-lg px-4 py-3 text-sm font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+                  className="rounded-lg px-4 py-3 text-sm font-medium text-white/100 transition-colors hover:textwhite/50"
                 >
                   {link.label}
                 </a>

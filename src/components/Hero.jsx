@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import WhatsAppIcon from "./WhatsAppIcon";
 import capa from "../assets/images/adv4.webp";
@@ -15,6 +15,20 @@ export default function Hero() {
     target: ref,
     offset: ["start start", "end start"],
   });
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+    const updateMatch = () => setIsMobile(mediaQuery.matches);
+    updateMatch();
+
+    mediaQuery.addEventListener("change", updateMatch);
+
+    return () => mediaQuery.removeEventListener("change", updateMatch);
+  }, []);
 
   const y1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -80]);
@@ -27,7 +41,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={ref}
-      className="grain relative flex min-h-screen items-center overflow-hidden bg-charcoal"
+      className="grain relative flex min-h-screen items-center overflow-hidden bg-cream lg:bg-charcoal/95"
     >
       {/* Background watermark image */}
       <motion.div
@@ -49,7 +63,7 @@ export default function Hero() {
       {/* Reduzido o padding horizontal (px-6) e aumentado o max-width para o texto ir mais para a esquerda */}
       <motion.div
         style={{ opacity }}
-        className="relative mx-auto w-full max-w-[1400px] px-6 py-24 sm:py-32 lg:px-6 lg:py-40 2xl:max-w-[1550px] 2xl:px-12"
+        className="relative mx-auto w-full max-w-[1400px] px-6 py-20 sm:py-32 lg:px-6 lg:py-40 2xl:max-w-[1550px] 2xl:px-12"
       >
         {/* Grid ajustado: 0.8fr para texto (mais estreito) e 1.2fr para imagens (mais largo) */}
         <div className="grid items-center gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
@@ -60,7 +74,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="mb-6 flex items-center gap-4 sm:mb-8"
+              className="mb-6 hidden items-center gap-4 sm:mb-8 sm:flex"
             >
               <div className="h-px w-8 bg-burgundy" />
               <div className="h-px w-4 bg-gold" />
@@ -74,52 +88,41 @@ export default function Hero() {
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.3 }}
-              className="font-sans text-4xl font-medium leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4.5rem] 2xl:text-[5rem]"
+              className="font-sans text-[2.5rem] font-medium leading-[1.05] tracking-tight text-navy lg:text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4.5rem] 2xl:text-[5rem]"
             >
+              <br />
               {t("hero.headline1")}
               <br />
               <span className="text-gold">{t("hero.headline2")}</span>
               <br />
-              <span className="text-white/30">{t("hero.headline3")}</span>
-              <br />
-              {t("hero.headline4")}
-              <span className="text-burgundy">.</span>
             </motion.h1>
 
             <motion.div
               style={{ y: y2 }}
-              className="mt-8 flex max-w-xl flex-col gap-6 sm:mt-12 sm:gap-8 lg:mt-14"
+              className="mt-6 flex max-w-xl flex-col gap-4 sm:mt-12 sm:gap-8 lg:mt-14"
             >
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.7 }}
-                className="max-w-sm text-sm leading-relaxed text-white/50 sm:max-w-md sm:text-lg sm:leading-relaxed lg:max-w-lg lg:text-lg xl:max-w-xl 2xl:max-w-2xl"
-              >
-                {t("hero.subtitle")}
-              </motion.p>
+                className="max-w-sm whitespace-pre-line text-[1.18rem] leading-relaxed text-navy  lg:text-white sm:max-w-mdsm:leading-relaxed lg:max-w-lg lg:text-lg xl:max-w-xl 2xl:max-w-2xl"
+                dangerouslySetInnerHTML={{ __html: t("hero.subtitle") }}
+              />
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
-                className="flex flex-col gap-4 sm:flex-row sm:items-center"
+                className="mt-2 flex flex-col gap-3 sm:mt-0 sm:flex-row sm:items-center sm:gap-4"
               >
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="cta-whatsapp bg-whatsapp group inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3 text-[14px] font-semibold text-white sm:px-8 sm:py-4 sm:text-[15px]"
+                  className="cta-whatsapp whatsapp-pulse bg-whatsapp group inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3 text-[14px] font-semibold text-white shadow-[0_0_0_rgba(37,211,102,0.35)] sm:px-8 sm:py-4 sm:text-[15px]"
                 >
                   <WhatsAppIcon size={24} />
                   {t("hero.cta")}
-                </a>
-                <a
-                  href="#services"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3 text-[13px] font-medium text-white/40 transition-colors hover:text-white/80"
-                >
-                  <span className="h-px w-6 bg-white/20" />
-                  {t("hero.explore")}
                 </a>
               </motion.div>
             </motion.div>
@@ -130,11 +133,11 @@ export default function Hero() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            style={{ y: imgY }}
-            className="relative hidden h-full w-full lg:flex items-center justify-center gap-4 xl:gap-6"
+            style={{ y: isMobile ? 0 : imgY }}
+            className="relative mt-6 flex h-full w-full items-center justify-center gap-3 sm:gap-4 xl:gap-6 lg:flex lg:mt-0"
           >
             {/* Imagem Esquerda (Adv0) - Largura aumentada para w-[58%] para evitar o corte do braço */}
-            <div className="relative h-[450px] w-[42%] translate-y-8 xl:h-[580px] xl:translate-y-12">
+            <div className="relative h-[250px] w-[42%] translate-y-4 sm:h-[450px] sm:translate-y-8 xl:h-[580px] xl:translate-y-12">
               <div className="absolute -top-3 -left-3 h-16 w-px bg-burgundy/60" />
               <div className="absolute -top-3 -left-3 h-px w-16 bg-burgundy/60" />
 
@@ -146,7 +149,7 @@ export default function Hero() {
             </div>
 
             {/* Imagem Direita (Capa) - Largura ajustada para w-[42%] para compensar o aumento da outra */}
-            <div className="relative h-[450px] w-[50%] -translate-y-8 xl:h-[580px] xl:-translate-y-12">
+            <div className="relative h-[250px] w-[50%] -translate-y-4 sm:h-[450px] sm:-translate-y-8 xl:h-[580px] xl:-translate-y-12">
               <div className="absolute -bottom-3 -right-3 h-16 w-px bg-gold/40" />
               <div className="absolute -bottom-3 -right-3 h-px w-16 bg-gold/40" />
 
@@ -157,11 +160,11 @@ export default function Hero() {
               />
 
               {/* Floating badge */}
-              <div className="absolute right-4 z-20 rounded-xl border border-white/10 bg-charcoal/90 px-8 py-3 shadow-2xl backdrop-blur-md xl:left-2 xl:right-auto xl:-bottom-25">
-                <p className="text-[14px] font-semibold tracking-wider text-gold/70">
+              <div className="absolute right-4 z-20 rounded-xl border border-navy/10 bg-cream/95 px-6 py-2 shadow-2xl backdrop-blur-md xl:left-2 xl:right-auto xl:-bottom-25">
+                <p className="text-[14px] font-semibold tracking-wider text-gold/80">
                   {t("hero.badge")}
                 </p>
-                <p className="whitespace-nowrap text-sm font-bold text-white xl:text-xl">
+                <p className="whitespace-nowrap text-sm font-bold text-navy xl:text-xl">
                   {t("hero.badgeTitle")}
                 </p>
               </div>

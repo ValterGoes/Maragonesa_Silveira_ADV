@@ -130,11 +130,20 @@ body {
   }
 }
 
-/* WhatsApp pulse */
+.whatsapp-pulse {
+  animation: pulse-whatsapp 2.2s ease-in-out infinite;
+}
+
 @keyframes pulse-whatsapp {
-  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-  50% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.8), 0 6px 24px rgba(37, 211, 102, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0), 0 10px 30px rgba(37, 211, 102, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 6px 24px rgba(37, 211, 102, 0.45);
+  }
 }
 
 /* Scrollbar */

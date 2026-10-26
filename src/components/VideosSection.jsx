@@ -258,6 +258,7 @@ export default function VideosSection() {
       ref={ref}
       className="relative overflow-hidden bg-offwhite py-14 lg:py-18"
     >
+      {/* texto de fundo da seção */}
       <motion.div
         style={{ y: bgY }}
         className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none flex flex-col items-center justify-center text-center xl:pt-30"
@@ -267,7 +268,7 @@ export default function VideosSection() {
           .map((word, i) => (
             <span
               key={i}
-              className="block font-serif text-[10rem] font-bold leading-[0.85] text-navy/[0.03] sm:text-[16rem] md:text-[20rem] lg:text-[26rem] xl:text-[30rem] 2xl:text-[38rem]"
+              className="block font-serif text-[10rem] font-bold leading-[0.85] text-navy/[0.02] sm:text-[16rem] md:text-[20rem] lg:text-[26rem] xl:text-[26rem] 2xl:text-[34rem]"
             >
               {word}
             </span>
@@ -281,6 +282,7 @@ export default function VideosSection() {
           className="mb-6 flex items-center gap-4"
         >
           <div className="h-px w-12 bg-gold" />
+          <div className="h-px w-8 bg-burgundy" />
           <span className="text-[11px] font-semibold tracking-[0.3em] text-gold">
             {t("videos.eyebrow")}
           </span>

@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import VideosSection from './components/VideosSection'
+import FAQSection from "./components/FAQSection";
 import ServicesSection from './components/ServicesSection'
 import AboutSection from './components/AboutSection'
 import GoogleReviews from './components/GoogleReviews'
@@ -31,6 +32,7 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+        <FAQSection />
         <VideosSection />
         <ServicesSection />
         <AboutSection />

@@ -28,6 +28,12 @@ const locations = {
     mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3553.8!2d-48.6348!3d-26.9906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sR.+55%2C+50+-+Centro%2C+Balne%C3%A1rio+Cambori%C3%BA+-+SC!5e0!3m2!1spt-BR!2sbr!4v1",
     mapsUrl: "https://www.google.com/maps/search/R.+55,+50+-+Centro,+Balne%C3%A1rio+Cambori%C3%BA+-+SC",
   },
+  santos: {
+    lat: -23.9608,
+    lng: -46.333,
+    mapSrc: "https://www.google.com/maps?q=Santos%20SP%20Brasil&output=embed",
+    mapsUrl: "https://www.google.com/maps/search/Santos,+SP,+Brasil",
+  },
 };
 
 function getDistance(lat1, lng1, lat2, lng2) {
@@ -45,6 +51,9 @@ function getDistance(lat1, lng1, lat2, lng2) {
 function getClosestOffice(userLat, userLng) {
   const distPoa = getDistance(userLat, userLng, locations.poa.lat, locations.poa.lng);
   const distBc = getDistance(userLat, userLng, locations.bc.lat, locations.bc.lng);
+  const distSantos = getDistance(userLat, userLng, locations.santos.lat, locations.santos.lng);
+
+  if (distSantos < distPoa && distSantos < distBc) return "santos";
   return distBc < distPoa ? "bc" : "poa";
 }
 
@@ -87,7 +96,7 @@ export default function ContactSection() {
               className="mb-6 flex items-center gap-4"
             >
               <div className="h-px w-8 bg-burgundy" />
-              <div className="h-px w-4 bg-gold" />
+              <div className="h-px w-12 bg-gold" />
               <span className="text-[11px] font-semibold tracking-[0.3em] text-gold">
                 {t("contact.eyebrow")}
               </span>
@@ -296,19 +305,34 @@ export default function ContactSection() {
                 </div>
               </button>
 
-              <div className="flex items-start gap-4 p-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-border bg-white">
-                  <Globe size={16} className="text-burgundy" />
+              <button
+                type="button"
+                onClick={() => setActiveLocation("santos")}
+                className={`flex w-full items-start gap-4 rounded-xl p-3 text-left transition-all duration-300 ${
+                  activeLocation === "santos"
+                    ? "border border-burgundy/20 bg-white shadow-[0_4px_20px_rgba(74,111,165,0.06)]"
+                    : "border border-transparent hover:bg-white/60"
+                }`}
+              >
+                <div
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-colors duration-300 ${
+                    activeLocation === "santos"
+                      ? "border-burgundy/20 bg-burgundy/10"
+                      : "border-gray-border bg-white"
+                  }`}
+                >
+                  <MapPin size={16} className="text-burgundy" />
                 </div>
                 <div>
                   <p className="text-[11px] font-semibold tracking-wider text-navy/40">
-                    {t("contact.onlineLabel")}
+                    {t("contact.address3Label")}
                   </p>
                   <p className="text-sm font-medium text-navy">
-                    {t("contact.onlineText")}
+                    {t("contact.address3Line1")}
+                    <br />
                   </p>
                 </div>
-              </div>
+              </button>
             </motion.div>
           </div>
 

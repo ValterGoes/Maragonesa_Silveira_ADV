@@ -6,10 +6,10 @@ import { motion, useInView } from "framer-motion";
 const reviewsData = [
   {
     id: 6,
-    name: "Silvia Lima",
-    date: "26/04/2026",
+    name: "Janice Fleck",
+    date: "15/10/2025",
     rating: 5.0,
-    text: '"A dra Mara  É excelente, O seu atendimento é maravilhoso ,ela se preocupa com a causa de maneira humana .. e acompanha tudo de perto é com muita responsabilidade e competência, estou muito satisfeita com o seu trabalho e me sinto segura em tê-la para me representar ."',
+    text: '"super recomendo!!!"',
   },
   {
     id: 5,
@@ -20,17 +20,10 @@ const reviewsData = [
   },
   {
     id: 6,
-    name: "Carlos P.",
+    name: "Merhy helen Silveira",
     date: "09/05/2026",
     rating: 5.0,
-    text: '"Profissionalismo e transparência durante todo o processo. Recomendo."',
-  },
-  {
-    id: 7,
-    name: "Ana R.",
-    date: "01/04/2026",
-    rating: 4.0,
-    text: '"Boa comunicação e resultado satisfatório. Apenas pequenos atrasos."',
+    text: '"Ótimo atendimento \nMuito atenciosa"',
   },
   {
     id: 1,
@@ -112,15 +105,21 @@ export default function GoogleReviews() {
             className="mb-6 flex items-center gap-4"
           >
             <div className="h-px w-8 bg-burgundy" />
-            <div className="h-px w-4 bg-gold" />
+            <div className="h-px w-12 bg-gold" />
             <span className="text-[11px] font-semibold tracking-[0.3em] text-gold">
               {t("reviews.eyebrow")}
             </span>
           </motion>
-          <h2 className="text-xl font-semibold text-gray-800">
-            {t("reviews.title1")} {t("reviews.title2")}
+          <h2 className="font-sans text-3xl font-medium leading-[1.1] tracking-tight text-navy sm:text-4xl xl:text-5xl 2xl:text-6xl">
+            <span className="text-navy">{t("reviews.title1")}</span>{" "}
+            <span className="text-navy/30">{t("reviews.title2")}</span>
+            <span className="text-burgundy">.</span>
           </h2>
-          <p className="mt-1 text-sm text-gray-500">{t("reviews.subtitle")}<br/>{t("reviews.subtitle2")}</p>
+          <p className="mt-1 text-sm text-gray-500">
+            {t("reviews.subtitle")}
+            <br />
+            {t("reviews.subtitle2")}
+          </p>
         </div>
 
         {/* Container do Carrossel */}
