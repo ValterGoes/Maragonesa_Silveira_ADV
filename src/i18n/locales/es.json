@@ -16,7 +16,7 @@
     "headline2": "Previsional",
     "headline3": "que protege",
     "headline4": "sus derechos",
-    "subtitle": "Le negaron el subsidio por enfermedad, se retrasó su jubilación o sufrió una reducción de capacidad debido a un accidente? Nos encargamos de toda la burocracia y combatimos los errores del INSS por usted. Atención humanizada y especializada para garantizar sus derechos sin necesidad de salir de casa.",
+    "subtitle": "<strong>Jubilaciones</strong>, <strong>Subsidio por Accidente</strong>, <strong>Subsidio por Enfermedad</strong>, <strong>BPC/LOAS</strong>. Nos encargamos de toda la burocracia y combatimos los errores del INSS por usted, con atención humanizada y especializada sin salir de casa.",
     "cta": "Hablar con un Especialista",
     "explore": "Explorar servicios",
     "badge": "ESPECIALISTAS",
@@ -43,20 +43,16 @@
         "description": "Beneficio otorgado al asegurado que sufrió un accidente y quedó con secuelas que reducen su capacidad laboral."
       },
       {
+        "title": "Salario Maternidad",
+        "description": "Derecho a la licencia por maternidad con pago del beneficio, incluido el análisis de valores y revisión ante denegaciones indebidas."
+      },
+      {
         "title": "Exención del IRPF",
         "description": "Exención del impuesto sobre la renta por enfermedades graves, como neoplasias malignas, cardiopatías graves, alienación mental y otras."
       },
       {
-        "title": "BPC (LOAS)",
-        "description": "Beneficio asistencial para personas con discapacidad o adultos mayores en situación de bajos ingresos."
-      },
-      {
         "title": "Cancelación de Hipoteca",
         "description": "Análisis del contrato para la posibilidad de cancelación de la hipoteca ante la invalidez o fallecimiento del titular."
-      },
-      {
-        "title": "Pensión por Fallecimiento",
-        "description": "Beneficio otorgado a los dependientes del asegurado fallecido. Revisión de montos y cuotas."
       },
       {
         "title": "Adicional del 25%",
@@ -80,6 +76,111 @@
       "Beneficio INSS Denegado",
       "Subsidio por Accidente",
       "Exención del Impuesto sobre la Renta"
+    ]
+  },
+  "faq": {
+    "eyebrow": "PREGUNTAS FRECUENTES",
+    "title1": "Aclare sus",
+    "title2": "dudas",
+    "subtitle": "Entienda sus derechos previsionales y conozca qué reglas se aplican a su caso para garantizar el mejor beneficio del INSS.",
+    "bgText": "Preguntas Dudas",
+    "moreInfo": "Más información",
+    "categories": [
+      {
+        "id": "auxilio-acidente",
+        "title": "Subsidio por Accidente",
+        "subtitle": "Indemnización por Secuelas",
+        "questions": [
+          {
+            "q": "¿Qué tipos de accidentes pueden dar derecho al beneficio?",
+            "a": "El subsidio por accidente vale para cualquier tipo de accidente: de tránsito, laboral, en casa, en vacaciones o incluso jugando al fútbol. Si la secuela produjo una limitación que dificulta el trabajo, el beneficio puede corresponderle.\nEjemplos: fracturas, amputaciones, sordera, pérdida de la visión, limitación de la movilidad y de los movimientos, entre otros."
+          },
+          {
+            "q": "El accidente ocurrió hace muchos años. ¿Todavía se puede pedir?",
+            "a": "En muchos casos, sí. No existe un plazo fijo para presentar la solicitud, pero cuanto más espere, más valores atrasados puede perder: el retroactivo puede llegar a los últimos 5 años. Cada mes sin beneficio es dinero que deja de entrar."
+          },
+          {
+            "q": "¿Necesito dejar de trabajar para recibir el subsidio por accidente?",
+            "a": "¡No! Tiene carácter indemnizatorio y, en general, puede recibirse junto con el salario. Usted puede seguir trabajando normalmente. El beneficio puede pagarse hasta el día anterior a la jubilación, siempre que cumpla los requisitos."
+          }
+        ]
+      },
+      {
+        "id": "auxilio-doenca",
+        "title": "Subsidio por Enfermedad",
+        "subtitle": "Incapacidad Temporal",
+        "questions": [
+          {
+            "q": "El INSS denegó mi subsidio, pero no puedo trabajar.",
+            "a": "Eso ocurre muy a menudo, incluso con laudos y exámenes en mano. El INSS puede negar el beneficio si no evalúa bien los documentos médicos o no reconoce su incapacidad. En muchos casos, la decisión solo se revierte en la Justicia, y cuanto antes actúe, mejor."
+          },
+          {
+            "q": "La empresa no me deja volver y el INSS denegó mi solicitud.",
+            "a": "Esa situación se conoce como limbo previsional. El INSS dice que puede trabajar, la empresa dice que no, y usted queda sin beneficio y sin salario. Existen caminos tanto contra el INSS como en la Justicia del Trabajo para reclamar los salarios del período."
+          },
+          {
+            "q": "El INSS cortó mi beneficio, pero sigo sin poder trabajar.",
+            "a": "Si aún está incapacitado por enfermedad, puede ser posible pedir una prórroga, pero hay que estar atento al plazo y mantener la documentación médica actualizada. Si el INSS lo cortó de todas formas, existen medidas judiciales para restablecer el pago."
+          }
+        ]
+      },
+      {
+        "id": "aposentadorias",
+        "title": "Jubilación",
+        "subtitle": "Planificación y Concesión",
+        "questions": [
+          {
+            "q": "¿Ya puedo jubilarme?",
+            "a": "Muchas personas ya tienen derecho y no lo saben. El simulador del Meu INSS no es confiable: no considera trabajo rural, actividad insalubre o peligrosa, enfermedad o discapacidad, y todo eso puede anticipar la jubilación y aumentar el valor.\nCuanto antes haga el análisis, antes descubrirá la mejor regla para su caso."
+          },
+          {
+            "q": "Mi jubilación salió con un valor bajo. ¿Puedo aumentarlo?",
+            "a": "Los errores en el cálculo del INSS, salarios no considerados y periodos de trabajo no reconocidos son más comunes de lo que parece.\nEn general, tiene 10 años para pedir la revisión, y puede haber valores atrasados por cobrar. No deje correr ese plazo."
+          },
+          {
+            "q": "El INSS denegó mi jubilación o está demorando. ¿Qué hago?",
+            "a": "La negativa no es el fin del camino. El primer paso es entender el motivo y verificar si todos sus documentos y derechos fueron analizados.\nDependiendo del caso, puede haber recurso o acción judicial, y la demora excesiva también puede ser llevada a la Justicia."
+          }
+        ]
+      },
+      {
+        "id": "pensao-por-morte",
+        "title": "Pensión por Fallecimiento",
+        "subtitle": "Derecho de dependientes",
+        "questions": [
+          {
+            "q": "Vivía en unión estable. ¿Tengo derecho a la pensión?",
+            "a": "Es posible, siempre que la relación esté comprobada. Fotos, escritura, comprobantes de residencia, cuentas conjuntas, hijos en común y otros documentos pueden ayudar.\nPueden tener derecho: cónyuge, pareja, hijos menores de 21 años o con discapacidad a cualquier edad. Los padres y hermanos también pueden tener derecho cuando se comprueba la dependencia económica."
+          },
+          {
+            "q": "¿Puedo recibir jubilación y pensión al mismo tiempo?",
+            "a": "Sí. No existe restricción para acumular ambos beneficios (pensión + jubilación)."
+          },
+          {
+            "q": "Mi pensión fue concedida por muy poco tiempo. ¿Se puede ampliar?",
+            "a": "La duración depende de la edad del dependiente, del tiempo de aportación del fallecido y del tiempo de casamiento o unión. Las personas con discapacidad pueden tener derecho a un plazo mayor, incluso vitalicio.\n¿Recibió solo 4 meses o menos de lo esperado? Vale la pena hacer un análisis."
+          }
+        ]
+      },
+      {
+        "id": "bpc-loas",
+        "title": "BPC/LOAS",
+        "subtitle": "Beneficio asistencial",
+        "questions": [
+          {
+            "q": "Nunca pagué al INSS. ¿Puedo recibir el BPC/LOAS?",
+            "a": "¡Es posible! El BPC/LOAS no exige contribución. Se paga a personas con discapacidad de cualquier edad, incluidas niñas y niños, y a personas mayores de 65 años, siempre que cumplan los criterios de renta familiar y vulnerabilidad social."
+          },
+          {
+            "q": "Mi BPC fue cortado o está en revisión. ¿Qué hacer?",
+            "a": "Un corte puede dejar a la familia sin ningún ingreso. Por eso es importante descubrir el motivo y organizar la documentación cuanto antes. Dependiendo del caso, cabe recurso o acción judicial, y la Justicia puede determinar la vuelta de los pagos y los valores atrasados."
+          },
+          {
+            "q": "El INSS denegó mi solicitud de BPC. ¿Se puede revertir?",
+            "a": "Muchos casos de denegación ocurren por problemas con el CadÚnico, renta familiar considerada por encima del límite o fallas en la evaluación de la discapacidad. Estos puntos pueden analizarse y impugnarse, y muchas veces es posible revertir la decisión en la Justicia. No acepte la respuesta del INSS; busque ayuda especializada."
+          }
+        ]
+      }
     ]
   },
   "about": {
@@ -114,6 +215,9 @@
     "address2Label": "BALNEÁRIO CAMBORIÚ",
     "address2Line1": "R. 55, 50",
     "address2Line2": "Centro, Balneário Camboriú - SC, Brasil",
+    "address3Label": "SÃO PAULO / BAIXADA SANTISTA Y REGIÓN",
+    "address3Line1": "Baixada Santista",
+    "address3Line2": "Región de Santos - SP",
     "onlineLabel": "ATENCIÓN EN LÍNEA",
     "onlineText": "Disponible en todo Brasil",
     "hoursLabel": "HORARIO",

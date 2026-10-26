@@ -14,9 +14,7 @@
     "eyebrow": "MARAGONESA SILVEIRA",
     "headline1": "Advocacia",
     "headline2": "Previdenciária",
-    "headline3": "que protege",
-    "headline4": "seus direitos",
-    "subtitle": "Teve o auxílio-doença negado, a aposentadoria travada ou sofreu redução na capacidade por acidente? Nós cuidamos de toda a burocracia e combatemos os erros do INSS para você. Atendimento humanizado e especializado para garantir o seu direito sem precisar sair de casa.",
+    "subtitle": "<strong>Aposentadorias</strong>, <strong>Auxílio-acidente</strong>, <strong>Auxílio-doença</strong>, <strong>BPC/LOAS</strong>.\n\nCombatemos os erros do INSS e acompanhamos você em cada etapa, sem precisar sair de casa.",
     "cta": "Falar com Especialista",
     "explore": "Explorar serviços",
     "badge": "ESPECIALISTAS",
@@ -26,12 +24,12 @@
   },
   "services": {
     "eyebrow": "NOSSOS SERVIÇOS",
-    "title1": "Expertise onde",
+    "title1": "Experiência onde",
     "title2": "você mais precisa",
     "featured": "Serviço principal",
     "items": [
       {
-        "title": "Aposentadorias",
+        "title": "Aposentadoria",
         "description": "• Por tempo de contribuição\n• Por idade\n• Por tempo rural\n• Especial\n• Da pessoa com deficiência\n\nAnálise completa do seu direito à aposentadoria, com concessão e revisão de valores."
       },
       {
@@ -41,9 +39,13 @@
       {
         "title": "Auxílio-Acidente",
         "description": "Benefício pago ao segurado que sofreu um acidente e ficou com sequelas que reduzem sua capacidade de trabalho."
-      }, 
+      },
       {
-        "title": "Isenção do IR",
+        "title": "Salário Maternidade",
+        "description": "Direito à licença maternidade com recebimento do benefício, incluindo revisão de valores e análise de situações de negativa indevida."
+      },
+      {
+        "title": "Isenção do IRPF",
         "description": "Isenção de imposto de renda por doenças graves, como neoplasia maligna, cardiopatia grave, alienação mental e outros."
       },
       {
@@ -82,16 +84,121 @@
       "Isenção de Imposto de Renda"
     ]
   },
+  "faq": {
+    "eyebrow": "PERGUNTAS FREQUENTES",
+    "title1": "Tire suas ",
+    "title2": "dúvidas",
+    "subtitle": "Entenda seus direitos previdenciários e saiba quais regras se aplicam ao seu caso para garantir o melhor benefício do INSS.",
+    "bgText": "Perguntas Dúvidas",
+    "moreInfo": "Saiba mais",
+    "categories": [
+      {
+        "id": "auxilio-acidente",
+        "title": "Auxílio-Acidente",
+        "subtitle": "Indenização por Sequela",
+        "questions": [
+          {
+            "q": "Quais tipos de acidente podem dar direito ao auxílio?",
+            "a": "O auxílio-acidente vale para qualquer tipo de acidente: de trânsito, de trabalho, em casa, nas férias ou até jogando futebol. Se a sequela deixou uma limitação que dificulta o seu trabalho, o benefício pode ser seu.\n\nExemplos: fratura, amputação, surdez, perda da visão, limitação de movimentos, entre outros."
+          },
+          {
+            "q": "Se o acidente foi há muitos anos. Ainda tenho direito?",
+            "a": "Sim. Mesmo que o acidente tenha acontecido há muitos anos, você ainda pode ter direito ao auxílio. Em regra, é possível cobrar os valores dos últimos 5 anos e receber o benefício até a aposentadoria."
+          },
+          {
+            "q": "Preciso parar de trabalhar para receber o auxílio-acidente?",
+            "a": "Não. Ele pode ser recebido junto com o salário. Você continua trabalhando normalmente. O benefício pode ser pago até a véspera da aposentadoria."
+          }
+        ]
+      },
+      {
+        "id": "auxilio-doenca",
+        "title": "Auxílio-Doença",
+        "subtitle": "Incapacidade Temporária",
+        "questions": [
+          {
+            "q": "O INSS negou meu auxílio, mas não consigo trabalhar.",
+            "a": "Isso acontece muito, mesmo com laudos e exames em mãos. O INSS pode negar por não avaliar bem os documentos médicos ou por não reconhecer sua incapacidade. Em muitos casos, a decisão pode ser revertida na Justiça com uma nova análise."
+          },
+          {
+            "q": "A empresa não me deixa voltar e o INSS negou meu pedido.",
+            "a": "Essa situação tem nome: limbo previdenciário. O INSS diz que você pode trabalhar, a empresa diz que não, e você fica sem benefício e sem salário. Existem caminhos tanto contra o INSS quanto na Justiça do Trabalho, para cobrar os salários do período."
+          },
+          {
+            "q": "O INSS cortou meu benefício, mas continuo sem condições de trabalhar.",
+            "a": "Se você ainda está incapacitado - doente, pode ser possível pedir a prorrogação ou novo pedido. É preciso ficar atento ao prazo e manter os documentos médicos em dia. Se o INSS cortou mesmo assim, há medidas judiciais para tentar restabelecer o pagamento."
+          }
+        ]
+      },
+      {
+        "id": "aposentadorias",
+        "title": "Aposentadoria",
+        "subtitle": "Planejamento e Concessão",
+        "questions": [
+          {
+            "q": "Será que já posso me aposentar?",
+            "a": "Muita gente já tem direito e não sabe. O simulador do Meu INSS não é confiável - não considera trabalho rural, atividade insalubre ou perigosa, doença ou deficiência, e tudo isso pode antecipar sua aposentadoria e aumentar o valor.\nQuanto antes você fizer a análise, mais cedo descobre a melhor regra para o seu caso."
+          },
+          {
+            "q": "Minha aposentadoria saiu com valor baixo. Posso aumentar?",
+            "a": "Erros no cálculo do INSS, salários não considerados e períodos de trabalho não reconhecidos são mais comuns do que parece.\nEm regra, você tem 10 anos para pedir a revisão, e pode haver valores atrasados a receber. Não deixe esse prazo correr."
+          },
+          {
+            "q": "O INSS negou minha aposentadoria ou está demorando. O que fazer?",
+            "a": "Negativa não é o fim do caminho. O primeiro passo é entender o motivo e conferir se todos os seus documentos e direitos foram analisados.\nDependendo do caso, cabe recurso ou ação judicial, e a demora excessiva também pode ser levada à Justiça."
+          }
+        ]
+      },
+      {
+        "id": "bpc-loas",
+        "title": "BPC/LOAS",
+        "subtitle": "Benefício assistencial",
+        "questions": [
+          {
+            "q": "Nunca paguei INSS. Posso receber o BPC/LOAS?",
+            "a": "É possível. O BPC/LOAS não exige contribuição. Ele é pago a pessoas com deficiência de qualquer idade, inclusive crianças, e a idosos com 65 anos ou mais, desde que atendam aos critérios de renda familiar e vulnerabilidade social."
+          },
+          {
+            "q": "Meu BPC foi cortado ou está em revisão. O que fazer?",
+            "a": "Um corte pode deixar a família sem nenhuma renda. Por isso, é importante descobrir o motivo e organizar a documentação o quanto antes. Dependendo do caso, cabe recurso ou ação judicial, e a Justiça pode determinar a volta dos pagamentos e dos valores atrasados."
+          },
+          {
+            "q": "O INSS negou meu pedido de BPC. Tem como reverter?",
+            "a": "Muitas negativas acontecem por problemas no CadÚnico, renda familiar considerada acima do limite ou falhas na avaliação da deficiência. Esses pontos podem ser analisados e contestados, e muitas vezes é possível reverter a decisão na Justiça. Não aceite a resposta do INSS, busque uma ajuda especializada."
+          }
+        ]
+      },
+      {
+        "id": "pensao-por-morte",
+        "title": "Pensão por Morte",
+        "subtitle": "Direito dos dependentes",
+        "questions": [
+          {
+            "q": "Vivia em união estável. Tenho direito à pensão?",
+            "a": "É possível, desde que a relação seja comprovada. Fotos, escritura, comprovantes de residência, contas conjuntas, filhos em comum e outros documentos podem ajudar.\nPodem ter direito: cônjuge, companheiro(a), filhos menores de 21 anos ou com invalidez ou deficiência de qualquer idade. Pais e irmãos também podem ter direito, quando comprovada a dependência econômica."
+          },
+          {
+            "q": "Posso receber aposentadoria e pensão ao mesmo tempo?",
+            "a": "Sim. Não existe restrição para acumular os dois benefícios (pensão + aposentadoria)."
+          },
+          {
+            "q": "Minha pensão foi concedida por pouco tempo. Dá para ampliar?",
+            "a": "A duração depende da idade do dependente, do tempo de contribuição do falecido e do tempo de casamento ou união. Pessoas com invalidez ou deficiência podem ter direito a prazo maior, até vitalício.\nRecebeu apenas 4 meses ou menos do que esperava? Vale a pena fazer uma análise."
+          }
+        ]
+      }
+    ]
+  },
   "about": {
     "eyebrow": "SOBRE NÓS",
     "bgText": "Sobre Nós",
     "title1": "Especialização",
     "title2": "& empatia",
     "title3": "em cada caso",
-    "description": "Somos especialistas em <strong>direito previdenciário perante ao INSS</strong>.<br>Nossa equipe alia profundo conhecimento técnico à atenção individualizada de cada caso, oferecendo soluções seguras e personalizadas para proteger direitos e maximizar benefícios.<br>Porque cada história merece ser tratada com excelência, dedicação e respeito.",
+    "description": "Somos especialistas em <strong>direito previdenciário junto ao INSS</strong>.<br>Nossa equipe alia profundo conhecimento técnico à atenção individualizada de cada caso, oferecendo soluções seguras e personalizadas para proteger direitos e maximizar benefícios.<br>Porque cada história merece ser tratada com excelência, dedicação e respeito.",
 
     "imgAlt": "Maragonesa Silveira — Advogada Previdenciária em Porto Alegre",
-    "pronome1": "Advogada - OAB/RS 123.645",
+    "pronome1": "Advogada - OAB/RS 124.645",
     "pronome2": "Advogada - OAB/SP 494.240"
   },
   "reviews": {
@@ -99,7 +206,7 @@
     "title1": "O que nossos",
     "title2": "clientes dizem",
     "subtitle": "A satisfação de nossos clientes é a nossa maior recompensa.",
-    "subtitle2": "Veja alguns depoimentos de pessoas que conseguiram garantir seus direitos previdenciários com a nossa ajuda.",
+    "subtitle2": "Veja alguns depoimentos de pessoas que conseguiram garantir seus direitos.",
     "bgText": "Depoimentos"
     
   },
@@ -111,12 +218,14 @@
     "whatsapp2": "Dra. Luciana Alves",
     "email": "E-mail",
     "instagram": "Instagram",
-    "addressLabel": "PORTO ALEGRE",
+    "addressLabel": "PORTO ALEGRE - RS",
     "addressLine1": "Av. Praia de Belas, nº 1212",
     "addressLine2": "Praia de Belas, Porto Alegre - RS",
-    "address2Label": "BALNEÁRIO CAMBORIÚ",
+    "address2Label": "BALNEÁRIO CAMBORIÚ - SC",
     "address2Line1": "R. 55, nº 50",
     "address2Line2": "Centro, Balneário Camboriú - SC",
+    "address3Label": "SANTOS - SP",
+    "address3Line1": "Baixada Santista e Região",
     "onlineLabel": "ATENDIMENTO ONLINE",
     "onlineText": "Disponível para todo o Brasil",
     "hoursLabel": "HORÁRIO",
@@ -127,8 +236,8 @@
   "footer": {
     "ctaTitle": "Conquiste seu benefício",
     "ctaSubtitle": "Agende uma consulta sem compromisso.",
-    "ctaButton": "Falar com Especialista",
-    "brandDescription": "Especialistas em Direito Previdenciário e benefícios do INSS. Atendimento humanizado em todo o Brasil.",
+    "ctaButton": "Falar com Advogada",
+    "brandDescription": "Especialistas em Direito Previdenciário e benefícios do INSS. Atendimento em todo o Brasil.",
     "contactLabel": "CONTATO",
     "copyright": "Maragonesa Silveira — Advocacia & Consultoria",
     "developedBy": "Desenvolvido por"

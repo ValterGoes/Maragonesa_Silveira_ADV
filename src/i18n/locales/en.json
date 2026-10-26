@@ -16,7 +16,7 @@
     "headline2": "Law Firm",
     "headline3": "protecting",
     "headline4": "your rights",
-    "subtitle": "Did you have your sickness benefit denied, your retirement delayed, or did you suffer a reduction in capacity due to an accident? We handle all the bureaucracy and fight INSS errors for you. Humanized and specialized service to guarantee your rights without having to leave your home.",
+    "subtitle": "<strong>Retirement</strong>, <strong>Accident Benefit</strong>, <strong>Disability Benefit</strong>, <strong>BPC/LOAS</strong>. We handle all the bureaucracy and fight INSS errors for you, with humanized and specialized support without leaving home.",
     "cta": "talk to the lawyer",
     "explore": "Explore services",
     "badge": "SPECIALISTS",
@@ -43,20 +43,16 @@
         "description": "Benefit granted to policyholders who suffered an accident resulting in reduced work capacity."
       },
       {
+        "title": "Maternity Pay",
+        "description": "Right to maternity leave with benefit payment, including review of amounts and analysis of improper denials."
+      },
+      {
         "title": "Income Tax Exemption",
         "description": "Tax exemption for serious medical conditions such as cancer, severe heart disease, mental disorders, and others."
       },
       {
-        "title": "BPC (LOAS)",
-        "description": "Social assistance benefit for disabled individuals or elderly people in low-income situations."
-      },
-      {
         "title": "Mortgage Discharge",
         "description": "Contract review for the possibility of property payoff in the event of disability or death of the borrower."
-      },
-      {
-        "title": "Survivor's Pension",
-        "description": "Benefit paid to dependents of a deceased policyholder. Review of amounts and shares."
       },
       {
         "title": "25% Supplement",
@@ -80,6 +76,111 @@
       "INSS Benefit Denied",
       "Accident Benefits",
       "Income Tax Exemption"
+    ]
+  },
+  "faq": {
+    "eyebrow": "FREQUENTLY ASKED QUESTIONS",
+    "title1": "Get clear on",
+    "title2": "your rights",
+    "subtitle": "Understand your social security rights and learn which rules apply to your case to secure the best INSS benefit.",
+    "bgText": "Questions Answers",
+    "moreInfo": "Learn more",
+    "categories": [
+      {
+        "id": "auxilio-acidente",
+        "title": "Accident Benefit",
+        "subtitle": "Compensation for Sequelae",
+        "questions": [
+          {
+            "q": "What types of accidents can qualify for the benefit?",
+            "a": "The accident benefit applies to any type of accident: traffic, work-related, at home, on vacation, or even while playing football. If the sequela caused a limitation that makes work harder, the benefit may be yours.\nExamples: fractures, amputations, deafness, loss of vision, reduced mobility and movement, among others."
+          },
+          {
+            "q": "The accident happened many years ago. Is it still possible to apply?",
+            "a": "In many cases, yes. There is no fixed deadline for filing the request, but the longer you wait, the more overdue amounts you may lose: the retroactive amount may reach up to the last 5 years. Every month without the benefit is money you are missing out on."
+          },
+          {
+            "q": "Do I need to stop working to receive the accident benefit?",
+            "a": "No! It is indemnity-based and, in general, may be received along with your salary. You can continue working normally. The benefit can be paid until the day before retirement, as long as you meet the requirements."
+          }
+        ]
+      },
+      {
+        "id": "auxilio-doenca",
+        "title": "Disability Benefit",
+        "subtitle": "Temporary Incapacity",
+        "questions": [
+          {
+            "q": "The INSS denied my benefit, but I cannot work.",
+            "a": "This happens very often, even when medical reports and exams are in hand. The INSS may deny the benefit if it does not properly assess the medical documents or does not recognize your incapacity. In many cases, the decision is only reversed in court, and the sooner you act, the better."
+          },
+          {
+            "q": "The company will not let me return to work and the INSS denied my request.",
+            "a": "This situation is called previdential limbo. The INSS says you can work, the company says you cannot, and you end up without benefit and without salary. There are legal paths both against the INSS and in labor court to demand the wages owed during that period."
+          },
+          {
+            "q": "The INSS cut my benefit, but I still cannot work.",
+            "a": "If you are still incapacitated due to illness, it may be possible to request an extension, but it is important to watch the deadline and keep your medical documents up to date. If the INSS still cut it, there are legal measures to restore the payment."
+          }
+        ]
+      },
+      {
+        "id": "aposentadorias",
+        "title": "Retirement",
+        "subtitle": "Planning and Granting",
+        "questions": [
+          {
+            "q": "Could I already retire?",
+            "a": "Many people already have the right and do not know it. The Meu INSS simulator is not reliable — it does not consider rural work, unhealthy or dangerous activity, illness, or disability, and all of this can advance retirement and increase the amount.\nThe earlier you request an analysis, the sooner you discover the best rule for your case."
+          },
+          {
+            "q": "My retirement was set at a low amount. Can I increase it?",
+            "a": "Errors in INSS calculations, uncounted salaries, and periods of work not recognized are more common than one might think.\nUsually, you have 10 years to request a review, and there may be overdue amounts to receive. Do not let that deadline pass."
+          },
+          {
+            "q": "The INSS denied my retirement or it is taking too long. What should I do?",
+            "a": "A denial is not the end of the road. The first step is to understand the reason and verify whether all your documents and rights were analyzed.\nDepending on the case, an appeal or legal action may be possible, and excessive delay can also be challenged in court."
+          }
+        ]
+      },
+      {
+        "id": "pensao-por-morte",
+        "title": "Survivor's Pension",
+        "subtitle": "Rights of dependents",
+        "questions": [
+          {
+            "q": "I lived in a common-law marriage. Do I have a right to a pension?",
+            "a": "It is possible, as long as the relationship is proven. Photos, deed, proof of residence, joint accounts, children in common, and other documents may help.\nThose who may have the right include: spouse, partner, children under 21 or with disability at any age. Parents and siblings may also have a right when economic dependence is proven."
+          },
+          {
+            "q": "Can I receive retirement and survivor's pension at the same time?",
+            "a": "Yes. There is no restriction on accumulating the two benefits (pension + retirement)."
+          },
+          {
+            "q": "My pension was granted for a very short time. Can it be extended?",
+            "a": "The duration depends on the dependent's age, the deceased person's contribution history, and the length of the marriage or union. People with disability may be entitled to a longer period, even for life.\nDid you receive only 4 months or less than expected? It is worth having the case analyzed."
+          }
+        ]
+      },
+      {
+        "id": "bpc-loas",
+        "title": "BPC/LOAS",
+        "subtitle": "Cash assistance benefit",
+        "questions": [
+          {
+            "q": "I never paid into INSS. Can I receive BPC/LOAS?",
+            "a": "Yes! BPC/LOAS does not require contributions. It is paid to people with disabilities at any age, including children, and to elderly people aged 65 or over, as long as they meet the family income and social vulnerability criteria."
+          },
+          {
+            "q": "My BPC was cut or is under review. What should I do?",
+            "a": "A cutoff can leave the family without any income. That is why it is important to find out the reason and organize the documents as soon as possible. Depending on the case, an appeal or legal action may be possible, and the court may order the resumption of payments and overdue amounts."
+          },
+          {
+            "q": "The INSS denied my BPC request. Can it be reversed?",
+            "a": "Many denials happen due to problems with CadÚnico, family income considered above the limit, or flaws in the disability assessment. These points can be analyzed and challenged, and in many cases it is possible to reverse the decision in court. Do not accept the INSS response; seek specialized help."
+          }
+        ]
+      }
     ]
   },
   "about": {
@@ -114,6 +215,9 @@
     "address2Label": "BALNEÁRIO CAMBORIÚ",
     "address2Line1": "R. 55, 50",
     "address2Line2": "Centro, Balneário Camboriú - SC, Brazil",
+    "address3Label": "SÃO PAULO / BAIXADA SANTISTA AND REGION",
+    "address3Line1": "Baixada Santista",
+    "address3Line2": "Santos Region - SP",
     "onlineLabel": "ONLINE SERVICE",
     "onlineText": "Available throughout Brazil",
     "hoursLabel": "BUSINESS HOURS",
