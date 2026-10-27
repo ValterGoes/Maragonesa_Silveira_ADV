@@ -56,7 +56,7 @@ function FAQCardInline({ cat, catIdx, openKey, toggleAccordion, auxilioAcidenteL
                     transition={{ duration: 0.18, ease: "easeOut" }}
                     className="absolute left-0 right-0 top-full z-20 pt-2"
                   >
-                    <div className="rounded-xl border border-[#EFE9E0] bg-white/95 px-3.5 pb-3.5 pt-2 text-sm leading-relaxed text-gray-text shadow-[0_14px_28px_rgba(22,35,51,0.10)] backdrop-blur-sm sm:px-4">{item.a}</div>
+                    <div className="rounded-xl border border-[#EFE9E0] bg-white/95 px-3.5 pb-3.5 pt-2 text-sm leading-relaxed text-navy/80 shadow-[0_14px_28px_rgba(22,35,51,0.10)] backdrop-blur-sm sm:px-4">{item.a}</div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -235,7 +235,7 @@ export default function FAQSection() {
                               exit={{ height: 0, opacity: 0 }}
                               transition={{ duration: 0.25, ease: "easeInOut" }}
                             >
-                              <div className="border-t border-[#EAE3D8] px-3.5 pb-3.5 pt-2 text-sm leading-relaxed text-gray-text sm:px-4">
+                              <div className="border-t border-[#EAE3D8] px-3.5 pb-3.5 pt-2 text-sm leading-relaxed text-navy sm:px-4">
                                 {item.a}
                               </div>
                             </motion.div>
