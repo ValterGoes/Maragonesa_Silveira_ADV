@@ -65,7 +65,7 @@ function BentoCard({ service, index, large, inView, featuredLabel, isOpen = fals
                 animate={{ height: 'auto', opacity: 1, marginTop: 8 }}
                 exit={{ height: 0, opacity: 0, marginTop: 0 }}
                 transition={{ duration: 0.22, ease: 'easeInOut' }}
-                className="w-full overflow-hidden rounded-xl border border-white/[0.04] bg-charcoal-light/90 p-3 text-sm leading-relaxed text-white/55 shadow-[0_14px_30px_rgba(0,0,0,0.24)] transition-colors duration-300 group-hover:text-white/70 whitespace-pre-line lg:backdrop-blur-sm"
+                className="w-full overflow-hidden rounded-xl border border-white/[0.04] bg-charcoal-light/90 p-3 text-sm leading-relaxed text-white/85 shadow-[0_14px_30px_rgba(0,0,0,0.24)] transition-colors duration-300 group-hover:text-white/90 whitespace-pre-line lg:backdrop-blur-sm"
               >
                 {service.description}
               </motion.p>
