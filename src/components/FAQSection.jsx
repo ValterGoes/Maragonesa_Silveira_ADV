@@ -11,9 +11,24 @@ const categoryIcons = {
   "bpc-loas": ShieldCheck,
 };
 
-function FAQCardInline({ cat, catIdx, openKey, toggleAccordion, auxilioAcidenteLandingPageLink, buildBenefitWhatsAppLink, t }) {
+function FAQCardInline({
+  cat,
+  catIdx,
+  openKey,
+  toggleAccordion,
+  auxilioAcidenteLandingPageLink,
+  auxilioDoencaLandingPageLink,
+  buildBenefitWhatsAppLink,
+  t,
+}) {
   const isActiveCategory =
     openKey !== null && String(openKey).startsWith(`${catIdx}-`);
+  const landingPageLink =
+    cat.id === "auxilio-acidente"
+      ? auxilioAcidenteLandingPageLink
+      : cat.id === "auxilio-doenca"
+        ? auxilioDoencaLandingPageLink
+        : null;
 
   return (
     <motion.article
@@ -65,8 +80,8 @@ function FAQCardInline({ cat, catIdx, openKey, toggleAccordion, auxilioAcidenteL
         })}
       </div>
 
-      {cat.id === "auxilio-acidente" ? (
-        <a href={auxilioAcidenteLandingPageLink} target="_blank" rel="noopener noreferrer" aria-label="Saiba mais sobre auxílio-acidente" className="mt-6 inline-flex items-center justify-center rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-navy transition-colors duration-200 hover:bg-[#d9b15d]">Saiba mais</a>
+      {landingPageLink ? (
+        <a href={landingPageLink} target="_blank" rel="noopener noreferrer" aria-label={`Saiba mais sobre ${cat.title.toLowerCase()}`} className="mt-6 inline-flex items-center justify-center rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-navy transition-colors duration-200 hover:bg-[#d9b15d]">Saiba mais</a>
       ) : (
         <a href={buildBenefitWhatsAppLink(cat.title)} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center justify-center rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-navy transition-colors duration-200 hover:bg-[#d9b15d]">Faça uma análise</a>
       )}
@@ -86,6 +101,7 @@ export default function FAQSection() {
   };
 
   const auxilioAcidenteLandingPageLink = "https://auxilioacidente.maragonesa.adv.br/";
+  const auxilioDoencaLandingPageLink = "https://auxiliodoenca.maragonesa.adv.br/";
 
   const faqCategories = (t("faq.categories", { returnObjects: true }) || []).map(
     (category) => ({
@@ -153,6 +169,7 @@ export default function FAQSection() {
                 openKey={openKey}
                 toggleAccordion={toggleAccordion}
                 auxilioAcidenteLandingPageLink={auxilioAcidenteLandingPageLink}
+                auxilioDoencaLandingPageLink={auxilioDoencaLandingPageLink}
                 buildBenefitWhatsAppLink={buildBenefitWhatsAppLink}
                 t={t}
               />
@@ -170,6 +187,7 @@ export default function FAQSection() {
                   auxilioAcidenteLandingPageLink={
                     auxilioAcidenteLandingPageLink
                   }
+                  auxilioDoencaLandingPageLink={auxilioDoencaLandingPageLink}
                   buildBenefitWhatsAppLink={buildBenefitWhatsAppLink}
                   t={t}
                 />
@@ -246,10 +264,16 @@ export default function FAQSection() {
                   })}
                 </div>
 
-                {cat.id === "auxilio-acidente" ? (
+                {cat.id === "auxilio-acidente" || cat.id === "auxilio-doenca" ? (
                   <a
-                    href={auxilioAcidenteLandingPageLink}
-                    aria-label="Saiba mais sobre auxílio-acidente"
+                    href={
+                      cat.id === "auxilio-acidente"
+                        ? auxilioAcidenteLandingPageLink
+                        : auxilioDoencaLandingPageLink
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Saiba mais sobre ${cat.title.toLowerCase()}`}
                     className="mt-6 inline-flex items-center justify-center rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-navy transition-colors duration-200 hover:bg-[#d9b15d]"
                   >
                     Saiba mais
@@ -261,7 +285,7 @@ export default function FAQSection() {
                     rel="noopener noreferrer"
                     className="mt-6 inline-flex items-center justify-center rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-navy transition-colors duration-200 hover:bg-[#d9b15d]"
                   >
-                    {t("faq.moreInfo")}
+                    Faça uma análise
                   </a>
                 )}
               </motion.article>
