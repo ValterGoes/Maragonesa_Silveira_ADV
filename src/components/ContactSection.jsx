@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { trackGoogleAdsClick } from "../utils/googleAds";
 import {
   MapPin,
   Clock,
@@ -67,6 +68,10 @@ export default function ContactSection() {
   const whatsappUrl2 = WHATSAPP_2 + encodeURIComponent(t("hero.whatsappMsg"));
   const current = locations[activeLocation];
 
+  const handleWhatsAppClick = (label) => () => {
+    trackGoogleAdsClick(label);
+  };
+
   useEffect(() => {
     fetch("https://ipapi.co/json/")
       .then((res) => res.json())
@@ -119,6 +124,7 @@ export default function ContactSection() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleWhatsAppClick("contact_whatsapp_1")}
               initial={{ opacity: 0, x: -20 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.3 }}
@@ -152,6 +158,7 @@ export default function ContactSection() {
               href={whatsappUrl2}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleWhatsAppClick("contact_whatsapp_2")}
               initial={{ opacity: 0, x: -20 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.3 }}

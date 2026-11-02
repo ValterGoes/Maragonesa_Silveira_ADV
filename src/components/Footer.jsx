@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { trackGoogleAdsClick } from '../utils/googleAds'
 import WhatsAppIcon from './WhatsAppIcon'
 import logoBranco from '../assets/images/logo_branco.png'
 import logo from '../assets/images/logo-valtergoes.svg'
@@ -17,6 +18,10 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   const whatsappUrl = WHATSAPP_BASE + encodeURIComponent(t('hero.whatsappMsg'))
+
+  const handleWhatsAppClick = () => {
+    trackGoogleAdsClick('footer_whatsapp')
+  }
 
   return (
     <footer className="grain relative overflow-hidden bg-charcoal">
@@ -39,6 +44,7 @@ export default function Footer() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleWhatsAppClick}
             className="cta-whatsapp bg-whatsapp group inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3 text-sm font-semibold text-white sm:px-8 sm:py-4"
           >
             <WhatsAppIcon size={20} />

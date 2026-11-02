@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import WhatsAppIcon from "./WhatsAppIcon";
+import { trackGoogleAdsClick } from "../utils/googleAds";
 import capa from "../assets/images/adv4.webp";
 import adv0 from "../assets/images/adv0.webp";
 import marcadagua from "../assets/images/marcadagua.png";
@@ -36,6 +37,10 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   const whatsappUrl = WHATSAPP_BASE + encodeURIComponent(t("hero.whatsappMsg"));
+
+  const handleCtaClick = () => {
+    trackGoogleAdsClick("hero_whatsapp");
+  };
 
   return (
     <section
@@ -119,6 +124,7 @@ export default function Hero() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={handleCtaClick}
                   className="cta-whatsapp whatsapp-pulse bg-whatsapp group inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3 text-[14px] font-semibold text-white shadow-[0_0_0_rgba(37,211,102,0.35)] sm:px-8 sm:py-4 sm:text-[15px]"
                 >
                   <WhatsAppIcon size={24} />

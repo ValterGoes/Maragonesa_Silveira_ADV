@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import { trackGoogleAdsClick } from '../utils/googleAds'
 import logoBranco from '../assets/images/logo_branco.png'
 import LanguageSelector from './LanguageSelector'
 
@@ -13,6 +14,10 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   const whatsappUrl = WHATSAPP_BASE + encodeURIComponent(t('hero.whatsappMsg'))
+
+  const handleWhatsAppClick = () => {
+    trackGoogleAdsClick('header_whatsapp')
+  }
 
   const navLinks = [
     { label: t('header.nav.services'), href: '#services' },
@@ -69,6 +74,7 @@ export default function Header() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleWhatsAppClick}
             className="cta-whatsapp bg-whatsapp inline-flex items-center gap-1.5 rounded-full px-5 py-2 text-[13px] font-semibold text-white"
           >
             <svg
@@ -123,6 +129,7 @@ export default function Header() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleWhatsAppClick}
                 className="bg-whatsapp to-whatsapp-hover mt-3 inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3 text-sm font-semibold text-white"
               >
                 <svg

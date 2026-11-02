@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { trackGoogleAdsClick } from "../utils/googleAds";
 
 const WHATSAPP_BASE = "https://wa.me/5551996839890?text=";
 
@@ -10,11 +11,8 @@ export default function WhatsAppButton() {
 
   const whatsappUrl = WHATSAPP_BASE + encodeURIComponent(t("hero.whatsappMsg"));
 
-  // Função para disparar a conversão do Google Ads
-  const handleWhatsAppClick = (e) => {
-    if (typeof window.gtag_report_conversion === "function") {
-      window.gtag_report_conversion();
-    }
+  const handleWhatsAppClick = () => {
+    trackGoogleAdsClick("floating_whatsapp");
   };
 
   useEffect(() => {
