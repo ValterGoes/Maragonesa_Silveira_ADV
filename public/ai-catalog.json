@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "name": "Maragonesa Silveira - Advocacia Previdenciária",
+  "url": "https://maragonesa.adv.br/",
+  "description": "Escritório especializado em Direito Previdenciário, benefícios do INSS e atendimento online em todo o Brasil.",
+  "language": ["pt-BR", "en", "es"],
+  "contact": {
+    "whatsapp": "https://wa.me/5551996839890",
+    "telephone": "+55 51 99683-9890",
+    "email": "maragonesa.adv@gmail.com",
+    "contact_page": "https://maragonesa.adv.br/#contact"
+  },
+  "service_area": {
+    "country": "Brasil",
+    "in_person_locations": [
+      {
+        "city": "Porto Alegre",
+        "region": "RS",
+        "address": "Av. Praia de Belas, 1212, sala 424"
+      },
+      {
+        "city": "Balneário Camboriú",
+        "region": "SC",
+        "address": "Rua 55, 50"
+      }
+    ]
+  },
+  "services": [
+    {
+      "name": "Aposentadorias",
+      "url": "https://maragonesa.adv.br/#services",
+      "description": "Análise, planejamento, concessão e revisão de aposentadorias."
+    },
+    {
+      "name": "Auxílio-doença",
+      "url": "https://maragonesa.adv.br/#services",
+      "description": "Orientação sobre benefícios por incapacidade temporária ou permanente."
+    },
+    {
+      "name": "Auxílio-acidente",
+      "url": "https://maragonesa.adv.br/#services",
+      "description": "Análise de benefício para segurados com sequelas que reduzem a capacidade de trabalho."
+    },
+    {
+      "name": "BPC/LOAS",
+      "url": "https://maragonesa.adv.br/#services",
+      "description": "Orientação sobre benefício assistencial para idosos e pessoas com deficiência de baixa renda."
+    },
+    {
+      "name": "Salário-maternidade",
+      "url": "https://maragonesa.adv.br/#services"
+    },
+    {
+      "name": "Isenção de imposto de renda",
+      "url": "https://maragonesa.adv.br/#services",
+      "description": "Análise de isenção de IRPF para pessoas com doenças graves."
+    },
+    {
+      "name": "Pensão por morte",
+      "url": "https://maragonesa.adv.br/#services"
+    },
+    {
+      "name": "Revisão de benefícios do INSS",
+      "url": "https://maragonesa.adv.br/#services"
+    }
+  ],
+  "profiles": [
+    "https://www.instagram.com/maragonesa",
+    "https://www.linkedin.com/in/maragonesa-silveira",
+    "https://web.facebook.com/MaragonesaSilveira",
+    "https://www.youtube.com/@maragonesaSilveira"
+  ]
+}
