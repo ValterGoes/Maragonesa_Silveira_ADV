@@ -3,8 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { trackGoogleAdsClick } from "../utils/googleAds";
-import capa from "../assets/images/adv4.webp";
-import adv0 from "../assets/images/adv0.webp";
 import marcadagua from "../assets/images/marcadagua.png";
 
 const WHATSAPP_BASE = "https://wa.me/5551996839890?text=";
@@ -57,6 +55,10 @@ export default function Hero() {
           src={marcadagua}
           alt=""
           aria-hidden="true"
+          width="2131"
+          height="2410"
+          loading="lazy"
+          decoding="async"
           className="h-260 w-full object-cover opacity-[0.02]"
         />
       </motion.div>
@@ -148,8 +150,12 @@ export default function Hero() {
               <div className="absolute -top-3 -left-3 h-px w-16 bg-burgundy/60" />
 
               <img
-                src={adv0}
+                src="/images/hero-secondary.jpg"
                 alt="Advogada Associada"
+                width="675"
+                height="964"
+                loading="eager"
+                decoding="async"
                 className="h-full w-full rounded-2xl object-cover object-center shadow-[0_20px_60px_rgba(0,0,0,0.4)] transition-transform duration-700 hover:scale-[1.02]"
               />
             </div>
@@ -160,8 +166,13 @@ export default function Hero() {
               <div className="absolute -bottom-3 -right-3 h-px w-16 bg-gold/40" />
 
               <img
-                src={capa}
+                src="/images/hero-primary.jpg"
                 alt="Advogada"
+                width="940"
+                height="1100"
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
                 className="h-full w-full rounded-2xl object-cover object-top shadow-[0_20px_60px_rgba(0,0,0,0.4)] transition-transform duration-700 hover:scale-[1.02]"
               />
 

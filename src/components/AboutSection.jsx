@@ -99,6 +99,10 @@ export default function AboutSection() {
             <motion.img
               src={advImg}
               alt={t("about.imgAlt")}
+              width="1080"
+              height="1080"
+              loading="lazy"
+              decoding="async"
               initial={{ opacity: 0, x: -40, scale: 1.05 }}
               animate={inView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: -40, scale: 1.05 }}
               transition={{ duration: 0.9, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
@@ -132,6 +136,10 @@ export default function AboutSection() {
             <motion.img
               src={adv2}
               alt="Advogada Associada"
+              width="1356"
+              height="1634"
+              loading="lazy"
+              decoding="async"
               initial={{ opacity: 0, x: 40, scale: 1.05 }}
               animate={inView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: 40, scale: 1.05 }}
               transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}

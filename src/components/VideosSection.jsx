@@ -70,7 +70,10 @@ function LazyVideo({
             <img
               src={thumb}
               alt={title}
+              width="1280"
+              height="720"
               loading="lazy"
+              decoding="async"
               onError={(e) => {
                 if (e.target.src !== fallbackThumb) {
                   e.target.src = fallbackThumb;

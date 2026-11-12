@@ -45,6 +45,10 @@ export default function Header() {
           <img
             src={logoBranco}
             alt="Logo Maragonesa Silveira Advocacia Previdenciária"
+            width="482"
+            height="482"
+            loading="eager"
+            decoding="async"
             className="h-9 w-auto opacity-100 transition-opacity group-hover:opacity-90 sm:h-10"
           />
           <div>

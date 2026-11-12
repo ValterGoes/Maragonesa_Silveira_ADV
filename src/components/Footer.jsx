@@ -1,8 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { trackGoogleAdsClick } from '../utils/googleAds'
 import WhatsAppIcon from './WhatsAppIcon'
-import logoBranco from '../assets/images/logo_branco.png'
-import logo from '../assets/images/logo-valtergoes.svg'
 
 const WHATSAPP_BASE = 'https://wa.me/5551996839890?text='
 
@@ -94,7 +92,15 @@ export default function Footer() {
             className="flex items-center justify-center gap-1 text-[11px] text-white/35 transition-colors hover:text-white/40 sm:justify-start mr-15"
           >
             {t("footer.developedBy")}{" "}
-            <img src={logo} alt="Valter Goes" className="h-8 w-20 opacity-40" />
+            <img
+              src="/images/footer-credit.png"
+              alt="Valter Goes"
+              width="320"
+              height="100"
+              loading="lazy"
+              decoding="async"
+              className="h-8 w-20 opacity-40"
+            />
           </a>
         </div>
       </div>

@@ -117,6 +117,10 @@ export default function ServicesSection() {
           <img
             src={logoCompleta}
             alt=""
+            width="1740"
+            height="844"
+            loading="lazy"
+            decoding="async"
             className="w-460 max-w-none opacity-[0.01]"
           />
         </motion.div>
