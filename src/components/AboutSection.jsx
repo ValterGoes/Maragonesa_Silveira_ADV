@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import advImg from "../assets/images/adv3.webp";
 import adv2 from "../assets/images/adv2.webp";
 
-export default function AboutSection() {
+export default function AboutSection({ id = 'about' }) {
   const { t } = useTranslation();
   const sectionRef = useRef(null);
   const inView = useInView(sectionRef, { once: true, margin: "-100px" });
@@ -18,7 +18,7 @@ export default function AboutSection() {
 
   return (
     <section
-      id="about"
+      id={id}
       ref={sectionRef}
       className="relative overflow-hidden bg-cream py-20 sm:py-32 lg:py-20"
     >

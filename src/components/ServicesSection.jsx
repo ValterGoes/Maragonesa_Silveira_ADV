@@ -84,7 +84,7 @@ function BentoCard({ service, index, large, inView, featuredLabel, isOpen = fals
   )
 }
 
-export default function ServicesSection() {
+export default function ServicesSection({ id = 'services' }) {
   const { t } = useTranslation()
   const sectionRef = useRef(null)
   const inView = useInView(sectionRef, { once: true, margin: '-80px' })
@@ -104,7 +104,7 @@ export default function ServicesSection() {
 
   return (
     <section
-      id="services"
+      id={id}
       ref={sectionRef}
       className="grain relative overflow-hidden bg-charcoal py-10 sm:py-18 lg:py-22"
     >

@@ -1,15 +1,16 @@
-import { useEffect } from 'react'
+import { lazy, useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import VideosSection from './components/VideosSection'
-import FAQSection from "./components/FAQSection";
-import ServicesSection from './components/ServicesSection'
-import AboutSection from './components/AboutSection'
-import GoogleReviews from './components/GoogleReviews'
-import ContactSection from './components/ContactSection'
+import DeferredSection from './components/DeferredSection'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 
+const FAQSection = lazy(() => import('./components/FAQSection'))
+const VideosSection = lazy(() => import('./components/VideosSection'))
+const ServicesSection = lazy(() => import('./components/ServicesSection'))
+const AboutSection = lazy(() => import('./components/AboutSection'))
+const GoogleReviews = lazy(() => import('./components/GoogleReviews'))
+const ContactSection = lazy(() => import('./components/ContactSection'))
 
 export default function App() {
   useEffect(() => {
@@ -32,12 +33,12 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <FAQSection />
-        <VideosSection />
-        <ServicesSection />
-        <AboutSection />
-        <GoogleReviews />
-        <ContactSection />
+        <DeferredSection Component={FAQSection} />
+        <DeferredSection Component={VideosSection} id="videos" />
+        <DeferredSection Component={ServicesSection} id="services" />
+        <DeferredSection Component={AboutSection} id="about" />
+        <DeferredSection Component={GoogleReviews} />
+        <DeferredSection Component={ContactSection} id="contact" />
       </main>
       <Footer />
       <WhatsAppButton />

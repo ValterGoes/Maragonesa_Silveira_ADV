@@ -58,7 +58,7 @@ function getClosestOffice(userLat, userLng) {
   return distBc < distPoa ? "bc" : "poa";
 }
 
-export default function ContactSection() {
+export default function ContactSection({ id = 'contact' }) {
   const { t } = useTranslation();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -85,7 +85,7 @@ export default function ContactSection() {
 
   return (
     <section
-      id="contact"
+      id={id}
       className="relative overflow-hidden bg-cream py-10 sm:py-14 lg:py-16"
     >
       <div

@@ -109,7 +109,7 @@ function LazyVideo({
   );
 }
 
-export default function VideosSection() {
+export default function VideosSection({ id = 'videos' }) {
   const { t } = useTranslation();
   const ref = useRef(null);
   const carouselRef = useRef(null);
@@ -257,7 +257,7 @@ export default function VideosSection() {
 
   return (
     <section
-      id="videos"
+      id={id}
       ref={ref}
       className="relative overflow-hidden bg-offwhite py-14 lg:py-18"
     >
