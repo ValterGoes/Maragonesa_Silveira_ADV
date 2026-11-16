@@ -2,9 +2,9 @@ import { lazy, useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import DeferredSection from './components/DeferredSection'
-import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 
+const Footer = lazy(() => import('./components/Footer'))
 const FAQSection = lazy(() => import('./components/FAQSection'))
 const VideosSection = lazy(() => import('./components/VideosSection'))
 const ServicesSection = lazy(() => import('./components/ServicesSection'))
@@ -40,7 +40,7 @@ export default function App() {
         <DeferredSection Component={GoogleReviews} />
         <DeferredSection Component={ContactSection} id="contact" />
       </main>
-      <Footer />
+      <DeferredSection Component={Footer} />
       <WhatsAppButton />
     </>
   )

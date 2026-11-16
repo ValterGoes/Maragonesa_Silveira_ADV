@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { trackGoogleAdsClick } from '../utils/googleAds'
 import logoBranco from '../assets/images/logo_branco.png'
@@ -106,15 +105,8 @@ export default function Header() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.nav
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="border-t border-navy/10 bg-navy/10 backdrop-blur-2xl md:hidden"
-          >
+      {mobileOpen && (
+          <nav className="mobile-nav-enter border-t border-navy/10 bg-navy/10 backdrop-blur-2xl md:hidden">
             <div className="flex flex-col gap-1 px-6 py-6">
               <div className="mb-2 flex justify-end">
                 <LanguageSelector />
@@ -148,9 +140,8 @@ export default function Header() {
                 {t("header.ctaMobile")}
               </a>
             </div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
+          </nav>
+      )}
     </header>
   );
 }

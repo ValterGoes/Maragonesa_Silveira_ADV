@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 
 const languages = [
@@ -17,6 +16,10 @@ export default function LanguageSelector() {
   const current = languages.find((l) => i18n.language?.startsWith(l.code)) || languages[0]
 
   useEffect(() => {
+    document.documentElement.lang = current.code === 'pt' ? 'pt-BR' : current.code
+  }, [current.code])
+
+  useEffect(() => {
     function handleClickOutside(e) {
       if (ref.current && !ref.current.contains(e.target)) {
         setOpen(false)
@@ -28,7 +31,6 @@ export default function LanguageSelector() {
 
   function changeLanguage(code) {
     i18n.changeLanguage(code)
-    document.documentElement.lang = code === 'pt' ? 'pt-BR' : code
     setOpen(false)
   }
 
@@ -47,15 +49,8 @@ export default function LanguageSelector() {
         />
       </button>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, y: -4, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -4, scale: 0.95 }}
-            transition={{ duration: 0.15 }}
-            className="absolute right-0 top-full mt-2 z-50 min-w-[100px] overflow-hidden rounded-xl border border-navy/10 bg-cream/95 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-2xl"
-          >
+      {open && (
+          <div className="language-menu-enter absolute right-0 top-full mt-2 z-50 min-w-[100px] overflow-hidden rounded-xl border border-navy/10 bg-cream/95 shadow-[0_8px_30px_rgba(0,0,0,0.08)] backdrop-blur-2xl">
             {languages.map((lang) => (
               <button
                 key={lang.code}
@@ -70,9 +65,8 @@ export default function LanguageSelector() {
                 <span>{lang.label}</span>
               </button>
             ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+      )}
     </div>
   )
 }

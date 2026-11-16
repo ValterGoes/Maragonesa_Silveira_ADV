@@ -1,5 +1,3 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { trackGoogleAdsClick } from "../utils/googleAds";
@@ -9,30 +7,6 @@ const WHATSAPP_BASE = "https://wa.me/5551996839890?text=";
 
 export default function Hero() {
   const { t } = useTranslation();
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const mediaQuery = window.matchMedia("(max-width: 767px)");
-
-    const updateMatch = () => setIsMobile(mediaQuery.matches);
-    updateMatch();
-
-    mediaQuery.addEventListener("change", updateMatch);
-
-    return () => mediaQuery.removeEventListener("change", updateMatch);
-  }, []);
-
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const imgY = useTransform(scrollYProgress, [0, 1], [0, 100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   const whatsappUrl = WHATSAPP_BASE + encodeURIComponent(t("hero.whatsappMsg"));
 
@@ -43,14 +17,10 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      ref={ref}
       className="grain relative flex min-h-screen items-center overflow-hidden bg-cream lg:bg-charcoal/95"
     >
       {/* Background watermark image */}
-      <motion.div
-        style={{ y: y1 }}
-        className="pointer-events-none absolute right-0 select-none"
-      >
+      <div className="pointer-events-none absolute right-0 select-none">
         <img
           src={marcadagua}
           alt=""
@@ -61,67 +31,43 @@ export default function Hero() {
           decoding="async"
           className="h-260 w-full object-cover opacity-[0.02]"
         />
-      </motion.div>
+      </div>
 
       {/* Accent lines adaptadas para a nova margem esquerda */}
       <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-transparent via-burgundy/30 to-transparent sm:left-6 lg:left-10" />
       <div className="absolute left-6 top-0 h-full w-px bg-gradient-to-b from-transparent via-gold/15 to-transparent sm:left-8 lg:left-[3.5rem]" />
 
       {/* Reduzido o padding horizontal (px-6) e aumentado o max-width para o texto ir mais para a esquerda */}
-      <motion.div
-        style={{ opacity }}
-        className="relative mx-auto w-full max-w-[1400px] px-6 py-20 sm:py-32 lg:px-6 lg:py-40 2xl:max-w-[1550px] 2xl:px-12"
-      >
+      <div className="hero-fade-in relative mx-auto w-full max-w-[1400px] px-6 py-20 sm:py-32 lg:px-6 lg:py-40 2xl:max-w-[1550px] 2xl:px-12">
         {/* Grid ajustado: 0.8fr para texto (mais estreito) e 1.2fr para imagens (mais largo) */}
         <div className="grid items-center gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
           {/* Left — text */}
           <div className="relative z-10">
             {/* Eyebrow */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="mb-6 hidden items-center gap-4 sm:mb-8 sm:flex"
-            >
+            <div className="hero-enter-left hero-delay-1 mb-6 hidden items-center gap-4 sm:mb-8 sm:flex">
               <div className="h-px w-8 bg-burgundy" />
               <div className="h-px w-4 bg-gold" />
               <span className="text-[11px] font-semibold tracking-[0.3em] text-gold">
                 {t("hero.eyebrow")}
               </span>
-            </motion.div>
+            </div>
 
             {/* Giant headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 60 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.3 }}
-              className="font-sans text-[2.5rem] font-medium leading-[1.05] tracking-tight text-navy lg:text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4.5rem] 2xl:text-[5rem]"
-            >
+            <h1 className="hero-enter-up hero-delay-2 font-sans text-[2.5rem] font-medium leading-[1.05] tracking-tight text-navy lg:text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-[4.5rem] 2xl:text-[5rem]">
               <br />
               {t("hero.headline1")}
               <br />
               <span className="text-gold">{t("hero.headline2")}</span>
               <br />
-            </motion.h1>
+            </h1>
 
-            <motion.div
-              style={{ y: y2 }}
-              className="mt-6 flex max-w-xl flex-col gap-4 sm:mt-12 sm:gap-8 lg:mt-14"
-            >
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.7 }}
-                className="max-w-sm whitespace-pre-line text-[1.18rem] leading-relaxed text-navy  lg:text-white sm:max-w-mdsm:leading-relaxed lg:max-w-lg lg:text-lg xl:max-w-xl 2xl:max-w-2xl"
+            <div className="mt-6 flex max-w-xl flex-col gap-4 sm:mt-12 sm:gap-8 lg:mt-14">
+              <p
+                className="hero-enter-up hero-delay-3 max-w-sm whitespace-pre-line text-[1.18rem] leading-relaxed text-navy  lg:text-white sm:max-w-mdsm:leading-relaxed lg:max-w-lg lg:text-lg xl:max-w-xl 2xl:max-w-2xl"
                 dangerouslySetInnerHTML={{ __html: t("hero.subtitle") }}
               />
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.9 }}
-                className="mt-2 flex flex-col gap-3 sm:mt-0 sm:flex-row sm:items-center sm:gap-4"
-              >
+              <div className="hero-enter-up hero-delay-4 mt-2 flex flex-col gap-3 sm:mt-0 sm:flex-row sm:items-center sm:gap-4">
                 <a
                   href={whatsappUrl}
                   target="_blank"
@@ -132,18 +78,12 @@ export default function Hero() {
                   <WhatsAppIcon size={24} />
                   {t("hero.cta")}
                 </a>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           </div>
 
           {/* Right — hero images composition */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            style={{ y: isMobile ? 0 : imgY }}
-            className="relative mt-6 flex h-full w-full items-center justify-center gap-3 sm:gap-4 xl:gap-6 lg:flex lg:mt-0"
-          >
+          <div className="hero-enter-right hero-delay-2 relative mt-6 flex h-full w-full items-center justify-center gap-3 sm:gap-4 xl:gap-6 lg:flex lg:mt-0">
             {/* Imagem Esquerda (Adv0) - Largura aumentada para w-[58%] para evitar o corte do braço */}
             <div className="relative h-[250px] w-[42%] translate-y-4 sm:h-[450px] sm:translate-y-8 xl:h-[580px] xl:translate-y-12">
               <div className="absolute -top-3 -left-3 h-16 w-px bg-burgundy/60" />
@@ -186,16 +126,11 @@ export default function Hero() {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Bottom stats */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="absolute bottom-6 left-6 right-6 sm:bottom-10 lg:left-6 lg:right-6"
-        >
+        <div className="hero-fade-in hero-delay-5 absolute bottom-6 left-6 right-6 sm:bottom-10 lg:left-6 lg:right-6">
           <div className="flex items-center gap-12 border-t border-white/[0.06] pt-6">
             {[].map((stat, i) => (
               <div key={stat.label} className="flex items-baseline gap-2">
@@ -211,8 +146,8 @@ export default function Hero() {
               </div>
             ))}
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 }

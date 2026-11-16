@@ -10,10 +10,6 @@ export default defineConfig({
         codeSplitting: {
           groups: [
             {
-              name: 'vendor-motion',
-              test: /[\\/]node_modules[\\/](framer-motion|motion-dom|motion-utils)[\\/]/,
-            },
-            {
               name: 'vendor-icons',
               test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
             },
