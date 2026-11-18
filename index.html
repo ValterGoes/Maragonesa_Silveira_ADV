@@ -260,55 +260,111 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+
+    <!-- Rastreador de Links do WhatsApp -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
+      (function () {
         // 1. Cole a URL do seu App da Web do Google Apps Script abaixo:
         const scriptURL = "https://script.google.com/macros/s/AKfycbycqGyM96Fl5CgbylZ63CzBtw3ux4BAb-1j8APlc7A_Hm53CPx5279Fx2X-akpLzOxF4A/exec";
 
+        // Guarda o GCLID na memória do navegador (mesmo se o usuário navegar entre páginas)
         const urlParams = new URLSearchParams(window.location.search);
-        const gclid = urlParams.get("gclid");
+        const gclidUrl = urlParams.get("gclid");
+        if (gclidUrl) {
+          sessionStorage.setItem("gclid_salvo", gclidUrl);
+        }
 
-        // Só ativa se o visitante veio de um anúncio pago com GCLID
-        if (gclid) {
-          // Gera um número de protocolo curto de 4 dígitos (ex: #4821)
-          const protocolo = "#" + Math.floor(1000 + Math.random() * 9000);
-          const whatsappLinks = document.querySelectorAll(
-            'a[href*="wa.me"], a[href*="://whatsapp.com"]',
-          );
+        const gclid = sessionStorage.getItem("gclid_salvo");
+        if (!gclid) return;
 
-          whatsappLinks.forEach(function (link) {
-            try {
-              // Formata o link do WhatsApp com o Protocolo no início
-              const url = new URL(link.href);
-              const mensagemAtual =
-                url.searchParams.get("text") ||
-                "Olá! Gostaria de agendar uma consulta sobre meu benefício previdenciário.";
-              const novaMensagem =
-                "Protocolo " + protocolo + " - " + mensagemAtual;
+        // Gera o protocolo único para este visitante
+        let protocolo = sessionStorage.getItem("protocolo_salvo");
+        if (!protocolo) {
+          protocolo = "#" + Math.floor(1000 + Math.random() * 9000);
+          sessionStorage.setItem("protocolo_salvo", protocolo);
+        }
 
-              url.searchParams.set("text", novaMensagem);
-              link.href = url.toString();
+        function formatarLinkWhatsApp(href) {
+          try {
+            const url = new URL(href);
+            const mensagemAtual =
+              url.searchParams.get("text") ||
+              "Olá! Gostaria de agendar uma consulta sobre meu benefício previdenciário.";
+            if (!mensagemAtual.includes(protocolo)) {
+              url.searchParams.set(
+                "text",
+                "Protocolo " + protocolo + " - " + mensagemAtual,
+              );
+            }
+            return url.toString();
+          } catch (e) {
+            return href;
+          }
+        }
 
-              // Envia os dados para a planilha no exato segundo em que o cliente clica
-              link.addEventListener("click", function () {
-                fetch(scriptURL, {
-                  method: "POST",
-                  mode: "no-cors",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
-                    protocolo: protocolo,
-                    gclid: gclid,
-                  }),
-                });
+        function enviarParaPlanilha() {
+          navigator.sendBeacon
+            ? navigator.sendBeacon(
+                scriptURL,
+                JSON.stringify({ protocolo: protocolo, gclid: gclid }),
+              )
+            : fetch(scriptURL, {
+                method: "POST",
+                mode: "no-cors",
+                keepalive: true,
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ protocolo: protocolo, gclid: gclid }),
               });
-            } catch (e) {
-              console.error("Erro ao configurar rastreamento do WhatsApp:", e);
+        }
+
+        // Varre e atualiza links a cada 1 segundo (para plugins que carregam atrasados)
+        setInterval(function () {
+          const links = document.querySelectorAll(
+            'a[href*="wa.me"], a[href*="whatsapp.com"]',
+          );
+          links.forEach(function (link) {
+            if (!link.dataset.rastreado) {
+              link.href = formatarLinkWhatsApp(link.href);
+              link.dataset.rastreado = "true";
+              link.addEventListener("click", enviarParaPlanilha);
             }
           });
-        }
-      });
+        }, 1000);
+
+        // Intercepta cliques globais (caso o botão seja um <button> ou evento JS)
+        document.addEventListener(
+          "click",
+          function (e) {
+            const alvo = e.target.closest(
+              'a, button, div[class*="whats"], span[class*="whats"]',
+            );
+            if (!alvo) return;
+
+            const href = alvo.getAttribute("href") || "";
+            const classes = (alvo.className || "").toString().toLowerCase();
+            const texto = (alvo.innerText || "").toLowerCase();
+
+            if (
+              href.includes("wa.me") ||
+              href.includes("whatsapp.com") ||
+              classes.includes("whats") ||
+              texto.includes("whatsapp")
+            ) {
+              if (
+                href &&
+                (href.includes("wa.me") || href.includes("whatsapp.com"))
+              ) {
+                alvo.href = formatarLinkWhatsApp(alvo.href);
+              }
+              if (!alvo.dataset.enviadoPlanilha) {
+                alvo.dataset.enviadoPlanilha = "true";
+                enviarParaPlanilha();
+              }
+            }
+          },
+          true,
+        );
+      })();
     </script>
 
     <div id="root"></div>
